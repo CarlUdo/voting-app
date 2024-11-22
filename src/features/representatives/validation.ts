@@ -6,7 +6,7 @@ const idSchema = z.object({
 
 export const newRepresentativeSchema = z.object({
   name: z.string(),
-  email: z.string(),
+  email: z.string().email(),
 });
 
 export const representativeSchema = idSchema.merge(newRepresentativeSchema);
