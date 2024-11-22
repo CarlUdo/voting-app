@@ -12,6 +12,6 @@ export const addRepresentativeAction = async (formData: FormData) => {
   } catch (error) {
     console.log(error);
   }
-  
+
   revalidatePath("/representatives");
 };
