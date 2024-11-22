@@ -26,5 +26,10 @@ export const createService = () => {
       const id = Math.floor(Math.random() * 100000);
       db.push({ id, ...represenative });
     },
+    remove: async(id: number) => {
+      const index = db.findIndex(representative => representative.id === id);
+      
+      if (index !== -1) db.splice(index, 1);
+    }
   };
 };
