@@ -25,4 +25,3 @@ export const removeRepresentativeAction = async (id: number) => {
 
   revalidatePath("/representatives");
 };
-
