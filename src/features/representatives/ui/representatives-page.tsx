@@ -4,10 +4,16 @@ import { RepresentativeBoard } from "./representative-board";
 
 export function RepresenativesPage() {
   return (
-    <div>
-      <Heading title="Vote for your representative" />
-      <InputForm />
-      <RepresentativeBoard />
-    </div>
+    <main>
+      <header>
+        <Heading title="Vote for your representative" />
+      </header>
+      <section>
+        <InputForm />
+      </section>
+      <section>
+        <RepresentativeBoard />
+      </section>
+    </main>
   );
 }
