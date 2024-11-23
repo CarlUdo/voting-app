@@ -1,2 +1,2 @@
 export * from "./input-form";
-export * from "./representative-board";
+export * from "./representatives-page";
