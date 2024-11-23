@@ -7,9 +7,11 @@ const seed = async () => {
   const numberOfRepresenatives = 10; 
   
   try {
+    await db.delete(represenativesTable);     
     await db.insert(represenativesTable).values(people.slice(0, numberOfRepresenatives));
+
+    await db.delete(publicVotersTable); 
     await db.insert(publicVotersTable).values(people);
-    console.log(`Successfully seeded ${numberOfRepresenatives} representatives and ${people.length} public voters.`);
   } catch (error) {
     console.log(`Error seeding representatives`, error);
   }  
