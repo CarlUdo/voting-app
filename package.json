@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -16,6 +17,7 @@
     "pg": "^8.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "uuid": "^11.0.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
