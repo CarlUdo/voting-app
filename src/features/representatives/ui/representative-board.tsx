@@ -1,9 +1,8 @@
-import { createService } from "../services";
+import { represenativesService } from "../instance";
 import { Representative } from "./representative";
 
 export async function RepresentativeBoard() {
-  const representatives = await createService().getAll();
-
+  const representatives = await represenativesService.getAll();
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Representatives</h1>
