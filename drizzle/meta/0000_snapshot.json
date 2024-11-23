@@ -1,9 +1,49 @@
 {
-  "id": "5fd42fe1-6198-4557-b9b0-75282ff9223e",
+  "id": "c7cb6534-6fd1-45c3-ab8e-f096562c7ea9",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.public_voters": {
+      "name": "public_voters",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "'b1d15213-f68c-420c-b1f7-080aed75e72b'"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "public_voters_email_unique": {
+          "name": "public_voters_email_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "email"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public.represenatives": {
       "name": "represenatives",
       "schema": "",
@@ -13,7 +53,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'6d3cf817-a27f-4c23-8d32-a0ebdcc7f2a9'"
+          "default": "'2cc925b0-12e6-403a-b2a2-1f771a373f04'"
         },
         "name": {
           "name": "name",
