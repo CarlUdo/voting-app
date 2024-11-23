@@ -6,7 +6,7 @@ export default function LoginButton() {
   const router = useRouter();
 
   const handleClick = async () => {
-    router.push("/represenatives");
+    router.push("/representatives");
   };
 
   return (
