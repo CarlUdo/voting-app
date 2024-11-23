@@ -11,7 +11,9 @@ export default function LoginButton() {
 
   return (
     <div className="pt-4">
-      <button onClick={handleClick} className="btn btn-primary">Login</button>
+      <button onClick={handleClick} className="btn btn-primary">
+        Login
+      </button>
     </div>
   );
 }

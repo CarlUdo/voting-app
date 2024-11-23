@@ -5,7 +5,7 @@ import { RepresentativeBoard } from "./representative-board";
 export function RepresenativesPage() {
   return (
     <div>
-      <Heading title="Vote for your representative" /> 
+      <Heading title="Vote for your representative" />
       <InputForm />
       <RepresentativeBoard />
     </div>

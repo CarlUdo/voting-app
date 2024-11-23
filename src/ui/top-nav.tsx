@@ -13,7 +13,7 @@ const links = [
     name: "Stats",
     href: "/stats",
   },
-  
+
   {
     name: "Logout",
     href: "/",
@@ -30,8 +30,7 @@ export function TopNav() {
           <Link
             key={link.name}
             href={link.href}
-            className={clsx(
-              "ml-2", {
+            className={clsx("ml-2", {
               "text-blue-700": pathname === link.href,
             })}
           >

@@ -1,6 +1,5 @@
-import { pgTable, varchar, uuid as pgUuid} from "drizzle-orm/pg-core";
-import { v4 } from 'uuid';
-
+import { pgTable, varchar, uuid as pgUuid } from "drizzle-orm/pg-core";
+import { v4 } from "uuid";
 
 export const represenativesTable = pgTable("represenatives", {
   id: pgUuid().primaryKey().default(v4()),

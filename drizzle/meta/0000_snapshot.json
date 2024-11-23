@@ -35,9 +35,7 @@
         "public_voters_email_unique": {
           "name": "public_voters_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -75,9 +73,7 @@
         "represenatives_email_unique": {
           "name": "represenatives_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
