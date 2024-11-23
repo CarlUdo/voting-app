@@ -1,3 +1,5 @@
+import { IssuesPage } from "@/features/issues/ui";
+
 export default function Page() {
-  return <p>Hej från Issues</p>;
+  return <IssuesPage />;
 }
