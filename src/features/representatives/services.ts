@@ -1,35 +1,19 @@
-import { newRepresentativeSchema } from "./validation";
+import { Db } from "@/db";
+import { represenativesTable } from "./schema";
+import { NewRepresentative, newRepresentativeSchema } from "./validation";
+import { v4 } from 'uuid';
 
-const db = [
-  {
-    id: 1,
-    name: "Carl",
-    email: "carl@wbsweden.com",
-  },
-  {
-    id: 2,
-    name: "Andrea",
-    email: "a@hotmail.com",
-  },
-  {
-    id: 3,
-    name: "Chriss",
-    email: "c@hotmail.com",
-  },
-];
-
-export const createService = () => {
+export const createService = (db: Db) => {
   return {
-    getAll: async () => db,
-    add: async (rawData: { name: string; email: string }) => {
+    getAll: async () => await db.select().from(represenativesTable),
+    add: async (rawData: NewRepresentative) => {
       const represenative = newRepresentativeSchema.parse(rawData);
-      const id = Math.floor(Math.random() * 100000);
-      db.push({ id, ...represenative });
+      await db.insert(represenativesTable).values({ id: v4(), ...represenative });
     },
-    remove: async (id: number) => {
-      const index = db.findIndex((representative) => representative.id === id);
+    // remove: async (id: number) => {
+    //   const index = db.findIndex((representative) => representative.id === id);
 
-      if (index !== -1) db.splice(index, 1);
-    },
+    //   if (index !== -1) db.splice(index, 1);
+    // },
   };
 };
