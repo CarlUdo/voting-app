@@ -8,14 +8,14 @@ const links = [
   {
     name: "Representatives",
     href: "/representatives",
+  },  
+  {
+    name: "Issues",
+    href: "/issues",
   },
   {
     name: "Stats",
     href: "/stats",
-  },
-  {
-    name: "Issues",
-    href: "/issues",
   },
   {
     name: "Logout",
