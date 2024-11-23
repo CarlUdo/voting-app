@@ -1,5 +1,5 @@
 import { Form } from "./form";
-import { Heading } from "./heading";
+import { Heading } from "../heading";
 import LoginButton from "./login-button";
 import { Slogan } from "./slogan";
 
