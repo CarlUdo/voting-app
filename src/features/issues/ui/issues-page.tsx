@@ -1,12 +1,19 @@
 import { Heading } from "@/ui";
+import { InputForm } from "./input-form";
+import { IssueBoard } from "./issue-board";
 
 export function IssuesPage() {
   return (
     <main>
       <header>
-        <Heading title="Create an issue" />
+        <Heading title="Manage Issues" />
       </header>
-      <section>Issues</section>
+      <section>
+        <InputForm />
+      </section>
+      <section>
+        <IssueBoard />
+      </section>
     </main>
   );
 }
