@@ -6,9 +6,7 @@ export function IssuesPage() {
       <header>
         <Heading title="Create an issue" />
       </header>
-      <section>
-        Issues
-      </section>
+      <section>Issues</section>
     </main>
   );
 }

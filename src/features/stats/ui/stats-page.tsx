@@ -6,9 +6,7 @@ export function StatsPage() {
       <header>
         <Heading title="Statistics" />
       </header>
-      <section>
-        Statistics
-      </section>
+      <section>Statistics</section>
     </main>
   );
 }
