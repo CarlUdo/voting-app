@@ -1,8 +1,15 @@
-import { integer, pgTable, varchar, boolean as pgBoolean } from "drizzle-orm/pg-core";
+import { pgTable, varchar, uuid as pgUuid} from "drizzle-orm/pg-core";
+import { v4 } from 'uuid';
 
-export const usersTable = pgTable("users", {
-  id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  username: varchar({ length: 255 }).notNull(),
+
+export const represenativesTable = pgTable("represenatives", {
+  id: pgUuid().primaryKey().default(v4()),
+  name: varchar({ length: 255 }).notNull(),
   email: varchar({ length: 255 }).notNull().unique(),
-  isRepresentative: pgBoolean().default(false),
 });
+
+// export const usersTable = pgTable("users", {
+//   id: integer().primaryKey().generatedAlwaysAsIdentity(),
+//   username: varchar({ length: 255 }).notNull(),
+//   email: varchar({ length: 255 }).notNull().unique(),
+// });
