@@ -1,11 +1,10 @@
 import { Heading } from "@/ui";
 
-
 export function IssuesPage() {
   return (
     <main>
       <header>
-        <Heading title="Vote for your representative" />
+        <Heading title="Create an issue" />
       </header>
       <section>
         Issues
