@@ -2,7 +2,6 @@ import { represenativesTable } from "@/features/representatives/schema";
 import { db } from ".";
 import { getRepresentatives } from "./seed-helpers";
 
-
 const seed = async () => {  
   const represenatives = getRepresentatives(10);  
 
