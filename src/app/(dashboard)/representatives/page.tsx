@@ -1,4 +1,4 @@
-import { RepresenativesPage } from "@/features/representatives/ui/representatives-page";
+import { RepresenativesPage } from "@/features/representatives";
 
 export default function Page() {
   return <RepresenativesPage />;
