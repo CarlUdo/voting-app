@@ -3,7 +3,7 @@
 import { removeRepresentativeAction } from "../actions";
 
 type Props = {
-  id: number;
+  id: string;
 };
 
 export function RemoveButton({ id }: Props) {
