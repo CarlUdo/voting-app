@@ -1,14 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createService } from "./services";
+import { represenativesService } from "./instance";
 
 export const addRepresentativeAction = async (formData: FormData) => {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
 
   try {
-    await createService().add({ name, email });
+    await represenativesService.add({ name, email });
   } catch (error) {
     console.log(error);
   }
@@ -18,7 +18,7 @@ export const addRepresentativeAction = async (formData: FormData) => {
 
 export const removeRepresentativeAction = async (id: number) => {
   try {
-    await createService().remove(id);
+    //await represenativesService.remove(id);
   } catch (error) {
     console.log(error);
   }
