@@ -13,7 +13,10 @@ const links = [
     name: "Stats",
     href: "/stats",
   },
-
+  {
+    name: "Issues",
+    href: "/issues",
+  },
   {
     name: "Logout",
     href: "/",
