@@ -12,10 +12,5 @@ export const createService = (db: Db) => {
         .insert(represenativesTable)
         .values({ id: v4(), ...represenative });
     },
-    // remove: async (id: number) => {
-    //   const index = db.findIndex((representative) => representative.id === id);
-
-    //   if (index !== -1) db.splice(index, 1);
-    // },
   };
 };

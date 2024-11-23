@@ -15,13 +15,3 @@ export const addRepresentativeAction = async (formData: FormData) => {
 
   revalidatePath("/representatives");
 };
-
-export const removeRepresentativeAction = async (id: number) => {
-  try {
-    //await represenativesService.remove(id);
-  } catch (error) {
-    console.log(error);
-  }
-
-  revalidatePath("/representatives");
-};
