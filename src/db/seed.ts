@@ -1,13 +1,15 @@
-import { represenativesTable } from "@/features/representatives/schema";
+import { publicVotersTable, represenativesTable } from "@/features/representatives/schema";
 import { db } from ".";
-import { getRepresentatives } from "./seed-helpers";
+import { getPeople } from "./seed-helpers";
 
 const seed = async () => {  
-  const represenatives = getRepresentatives(10);  
-
+  const people = getPeople(50); 
+  const numberOfRepresenatives = 10; 
+  
   try {
-    await db.insert(represenativesTable).values(represenatives);
-    console.log(`Successfully seeded ${represenatives.length} representatives.`);
+    await db.insert(represenativesTable).values(people.slice(0, numberOfRepresenatives));
+    await db.insert(publicVotersTable).values(people);
+    console.log(`Successfully seeded ${numberOfRepresenatives} representatives and ${people.length} public voters.`);
   } catch (error) {
     console.log(`Error seeding representatives`, error);
   }  
