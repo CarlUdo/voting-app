@@ -2,6 +2,7 @@ import { Db } from "@/db";
 import { issuesTable } from "./schema";
 import { NewIssue, newIssueSchema } from "./validation";
 import { v4 } from "uuid";
+import { eq } from "drizzle-orm";
 
 export const createService = (db: Db) => {
   return {
@@ -11,6 +12,12 @@ export const createService = (db: Db) => {
       await db
         .insert(issuesTable)
         .values({ id: v4(), ...issue });
+    },
+    updateActive: async (id: string, active: boolean) => {
+      await db
+        .update(issuesTable)
+        .set({ active })
+        .where(eq(issuesTable.id, id));
     },
   };
 }; 

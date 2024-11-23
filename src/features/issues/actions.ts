@@ -14,3 +14,13 @@ export const addIssueAction = async (formData: FormData) => {
 
   revalidatePath("/issues");
 };
+
+export const updateIssueActiveAction = async (id: string, active: boolean) => {
+  try {
+    await issuesService.updateActive(id, active);
+  } catch (error) {
+    console.log(error);
+  }
+
+  revalidatePath("/issues");
+};
