@@ -19,7 +19,7 @@ export const publicVoteSchema = idSchema.merge(
   newPublicVoteSchema.extend({
     dateCreated: z.date(),
   })
-);
+).nullable();
 
 export type PublicVoter = z.infer<typeof publicVoterSchema>;
 export type NewPublicVote = z.infer<typeof newPublicVoteSchema>;
