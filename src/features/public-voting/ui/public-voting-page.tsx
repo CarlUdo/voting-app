@@ -8,8 +8,10 @@ type Props = {
 };
 
 export async function PublicVotingPage({ searchParams }: Props) {
+  const selectedVoterId = searchParams.voterId;
+  const currentVote = selectedVoterId ? await publicVotingService.getLatestVoteByPublicVoter(selectedVoterId) : null;
   const publicVoters = await publicVotingService.getAllPublicVoters();
-
+  
   return (
     <main>
       <header>
@@ -18,8 +20,8 @@ export async function PublicVotingPage({ searchParams }: Props) {
       <section className="p-4">
         <PublicVotingSelector publicVoters={publicVoters} />
       </section>
-      <Suspense fallback={<div>Loading...</div>}> 
-        <RepresentativesBoard /> 
+      <Suspense fallback={<div>Loading...</div>}>
+        <RepresentativesBoard publicVoterId={selectedVoterId} currentVote={currentVote} />
       </Suspense>
     </main>
   );
