@@ -9,8 +9,10 @@ export function Issue({ data }: { data: IssueType }) {
         <DeactivateButton id={data.id} active={data.active} />
       </div>
       <div className="mt-2">
-        <span className={`badge ${data.active ? 'badge-success' : 'badge-error'}`}>
-          {data.active ? 'Active' : 'Inactive'}
+        <span
+          className={`badge ${data.active ? "badge-success" : "badge-error"}`}
+        >
+          {data.active ? "Active" : "Inactive"}
         </span>
         <span className="text-sm text-gray-500 ml-2">
           Created: {data.dateCreated.toDateString()}
@@ -26,4 +28,4 @@ export function Issue({ data }: { data: IssueType }) {
       </div>
     </div>
   );
-} 
+}

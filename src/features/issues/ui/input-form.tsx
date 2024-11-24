@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { addIssueAction } from "../actions";
@@ -21,13 +21,16 @@ export function InputForm() {
   };
 
   const handleSubmit = async (formData: FormData) => {
-    const validChoices = choices.filter(choice => choice.trim() !== "");
-    formData.append("choices", JSON.stringify(validChoices.map(name => ({ name }))));
+    const validChoices = choices.filter((choice) => choice.trim() !== "");
+    formData.append(
+      "choices",
+      JSON.stringify(validChoices.map((name) => ({ name }))),
+    );
     await addIssueAction(formData);
     setChoices([""]);
   };
 
-  const validChoices = choices.filter(choice => choice.trim() !== "");
+  const validChoices = choices.filter((choice) => choice.trim() !== "");
 
   return (
     <form className="flex flex-col gap-4" action={handleSubmit}>
@@ -41,7 +44,13 @@ export function InputForm() {
             placeholder="Issue name"
           />
         </label>
-        <button type="submit" className="btn btn-primary" disabled={validChoices.length < 2}>Add Issue</button>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={validChoices.length < 2}
+        >
+          Add Issue
+        </button>
       </div>
       <div className="flex flex-col gap-4">
         <h3 className="text-lg font-semibold">Choices</h3>
@@ -75,4 +84,4 @@ export function InputForm() {
       </div>
     </form>
   );
-} 
+}

@@ -8,7 +8,7 @@ const links = [
   {
     name: "Representatives",
     href: "/representatives",
-  },  
+  },
   {
     name: "Issues",
     href: "/issues",

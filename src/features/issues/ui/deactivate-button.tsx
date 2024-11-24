@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { updateIssueActiveAction } from "../actions";
 
@@ -15,11 +15,8 @@ export function DeactivateButton({ id, active }: Props) {
   if (!active) return null;
 
   return (
-    <button 
-      onClick={deactivate}
-      className="btn btn-sm btn-error"
-    >
+    <button onClick={deactivate} className="btn btn-sm btn-error">
       Deactivate
     </button>
   );
-} 
+}

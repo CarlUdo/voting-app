@@ -9,18 +9,28 @@ export const createService = (db: Db) => {
     getAll: async () => {
       const issues = await db.select().from(issuesTable);
       const choices = await db.select().from(choicesTable);
-      
-      return issues.map(issue => ({
+
+      return issues.map((issue) => ({
         ...issue,
-        choices: choices.filter(choice => choice.issueId === issue.id),
+        choices: choices.filter((choice) => choice.issueId === issue.id),
       }));
     },
     add: async (rawData: NewIssue) => {
       const issue = newIssueSchema.parse(rawData);
       const issueId = v4();
-      await db.insert(issuesTable).values({ id: issueId, name: issue.name, active: true, }); 
-      if (issue.choices.length > 0) { 
-        await db.insert(choicesTable).values( issue.choices.map(choice => ({ id: v4(), issueId, name: choice.name, })) ); 
+      await db
+        .insert(issuesTable)
+        .values({ id: issueId, name: issue.name, active: true });
+      if (issue.choices.length > 0) {
+        await db
+          .insert(choicesTable)
+          .values(
+            issue.choices.map((choice) => ({
+              id: v4(),
+              issueId,
+              name: choice.name,
+            })),
+          );
       }
     },
     updateActive: async (id: string, active: boolean) => {
@@ -30,4 +40,4 @@ export const createService = (db: Db) => {
         .where(eq(issuesTable.id, id));
     },
   };
-}; 
+};

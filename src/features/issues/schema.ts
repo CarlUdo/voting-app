@@ -1,4 +1,10 @@
-import { pgTable, varchar, uuid as pgUuid, boolean, timestamp } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  varchar,
+  uuid as pgUuid,
+  boolean,
+  timestamp,
+} from "drizzle-orm/pg-core";
 import { v4 } from "uuid";
 import { relations } from "drizzle-orm";
 
@@ -24,4 +30,4 @@ export const choicesRelations = relations(choicesTable, ({ one }) => ({
     fields: [choicesTable.issueId],
     references: [issuesTable.id],
   }),
-})); 
+}));
