@@ -1,10 +1,11 @@
 import { represenativesService } from "@/features/representatives/instance";
+import { PublicVoteCard } from "./public-vote-card";
 
 export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();
   return (
     <>
-    {representatives.map(representative => <p key={representative.id}>{representative.name}</p>)}
+      {representatives.map(representative => <PublicVoteCard key={representative.id} representative={representative} />)}
     </>
   );
 }

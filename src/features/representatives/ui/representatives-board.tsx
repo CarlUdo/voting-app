@@ -1,6 +1,7 @@
 import { Representative } from ".";
 import { represenativesService } from "../instance";
 
+
 export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();
   return (
