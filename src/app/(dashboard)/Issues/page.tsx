@@ -1,4 +1,4 @@
-import { IssuesPage } from "@/features/issues/ui";
+import { IssuesPage } from "@/features/issues";
 
 export default function Page() {
   return <IssuesPage />;
