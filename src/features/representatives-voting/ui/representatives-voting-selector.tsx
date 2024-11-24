@@ -14,7 +14,7 @@ export function RepresentativesVotingSelector({ representatives }: Props) {
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const repId = e.target.value;
-    router.push(`/representative-voting?representativeId=${repId}`);
+    router.push(`/representatives-voting?representativeId=${repId}`);
   };
   return (
     <div className="form-control w-full max-w-xs mb-8">
