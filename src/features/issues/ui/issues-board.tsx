@@ -1,7 +1,7 @@
 import { issuesService } from "../instance";
-import { Issue } from "./issue";
+import { Issue } from ".";
 
-export async function IssueBoard() {
+export async function IssuesBoard() {
   const issues = await issuesService.getAll();
   return (
     <div className="p-4">
