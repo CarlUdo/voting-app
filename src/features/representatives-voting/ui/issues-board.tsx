@@ -1,15 +1,13 @@
-import { represenativesService } from "@/features/representatives/instance";
-import { PublicVoteCard } from "./public-vote-card";
-import { PublicVote } from "../validation";
-import type { RepresentativeType } from "@/libs";
+import { IssuesVoteCard } from "./issues-vote-card";
+import { representativesVotingService } from "../instance";
 
 type Props = {
-  representatives: RepresentativeType[];
   selectedRepId: string | undefined;
 };
 
-export async function IssuesBoard({ issues, selectedRepId }: Props) {
-  const representatives = await represenativesService.getAll();
+export async function IssuesBoard({ selectedRepId }: Props) {
+  const representatives = await representativesVotingService.getAllRepresentatives();
+  const issues = await representativesVotingService.getActiveIssues();
   return (
     <>
       {!selectedRepId ? (
@@ -18,16 +16,12 @@ export async function IssuesBoard({ issues, selectedRepId }: Props) {
         <p className="text-center text-gray-500">No representatives found</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* {representatives.map((representative) => (
-            <PublicVoteCard
-              key={representative.id}
-              representative={representative}
-              publicVoterId={publicVoterId}
-              isCurrentVote={
-                currentVote?.representativeId === representative.id
-              }
-            />
-          ))} */}
+          {issues.map((issue) => (
+              <IssuesVoteCard 
+                key={issue.id} 
+                issue={issue}    
+              />
+          ))}
         </div>
       )}
     </>
