@@ -1,4 +1,4 @@
-import { Issue as IssueType } from "../validation";
+import { IssueType } from "../validation";
 import { DeactivateButton } from "./deactivate-button";
 
 export function Issue({ data }: { data: IssueType }) {
@@ -15,6 +15,14 @@ export function Issue({ data }: { data: IssueType }) {
         <span className="text-sm text-gray-500 ml-2">
           Created: {data.dateCreated.toDateString()}
         </span>
+      </div>
+      <div className="mt-4">
+        <h3 className="font-semibold mb-2">Choices:</h3>
+        <ul className="list-disc list-inside">
+          {data.choices.map((choice) => (
+            <li key={choice.id}>{choice.name}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
