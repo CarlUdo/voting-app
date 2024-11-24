@@ -12,4 +12,4 @@ export const newRepresentativeSchema = z.object({
 export const representativeSchema = idSchema.merge(newRepresentativeSchema);
 
 export type NewRepresentative = z.infer<typeof newRepresentativeSchema>;
-export type Representative = z.infer<typeof representativeSchema>;
+export type RepresentativeType = z.infer<typeof representativeSchema>;

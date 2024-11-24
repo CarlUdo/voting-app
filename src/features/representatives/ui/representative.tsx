@@ -1,4 +1,4 @@
-import { Representative as RepresentativeType } from "../validation";
+import { RepresentativeType } from "../validation";
 
 export function Representative({ data }: { data: RepresentativeType }) {
   return (
