@@ -5,7 +5,7 @@ import { RepresentativeVotingSelector } from "./representative-voting-selector";
 
 export async function VotingPage() {
   const representatives = await represenativesService.getAll();
-  
+
   return (
     <main>
       <header>
