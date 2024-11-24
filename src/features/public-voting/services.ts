@@ -1,6 +1,8 @@
 import { Db } from "@/db";
 import { publicVotersTable, publicVotesTable } from "./schema";
 import { desc, eq } from "drizzle-orm";
+import { NewPublicVote, newPublicVoteSchema } from "./validation";
+import { v4 } from "uuid";
 
 export const createService = (db: Db) => {
   return {
@@ -14,6 +16,12 @@ export const createService = (db: Db) => {
         .limit(1);
       
       return votes[0];
+    },
+    add: async (rawData: NewPublicVote) => {
+      const vote = newPublicVoteSchema.parse(rawData);
+      await db
+        .insert(publicVotesTable)
+        .values({ id: v4(), ...vote, dateCreated: new Date() });
     },
   };
 };
