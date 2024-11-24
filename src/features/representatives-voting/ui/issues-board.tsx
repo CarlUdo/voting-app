@@ -8,7 +8,6 @@ type Props = {
   selectedRepId: string | undefined;
 };
 
-
 export async function IssuesBoard({ issues, selectedRepId }: Props) {
   const representatives = await represenativesService.getAll();
   return (

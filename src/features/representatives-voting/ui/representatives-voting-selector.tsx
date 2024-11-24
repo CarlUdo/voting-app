@@ -3,7 +3,6 @@
 import { RepresentativeType } from "@/libs";
 import { useRouter, useSearchParams } from "next/navigation";
 
-
 type Props = {
   representatives: RepresentativeType[];
 };
