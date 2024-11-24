@@ -6,13 +6,21 @@ export const publicVoterSchema = z.object({
   email: z.string().email(),
 });
 
-export const voteSchema = z.object({ 
+const idSchema = z.object({
   id: z.string().uuid(),
-  publicVoterId: z.string().uuid(), 
-  representativeId: z.string().uuid(), 
-  dateCreated: z.date() 
-}).nullable();
+});
 
+export const newPublicVoteSchema = z.object({
+  publicVoterId: z.string().uuid(),
+  representativeId: z.string().uuid(),
+});
+
+export const publicVoteSchema = idSchema.merge(
+  newPublicVoteSchema.extend({
+    dateCreated: z.date(),
+  })
+);
 
 export type PublicVoter = z.infer<typeof publicVoterSchema>;
-export type Vote = z.infer<typeof voteSchema>;
+export type NewPublicVote = z.infer<typeof newPublicVoteSchema>;
+export type PublicVote = z.infer<typeof publicVoteSchema>; 

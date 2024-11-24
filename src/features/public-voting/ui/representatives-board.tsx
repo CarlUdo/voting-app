@@ -1,10 +1,10 @@
 import { represenativesService } from "@/features/representatives/instance";
 import { PublicVoteCard } from "./public-vote-card";
-import { Vote } from "../validation";
+import { PublicVote } from "../validation";
 
 type Props = {
   publicVoterId: string | undefined;
-  currentVote: Vote;
+  currentVote: PublicVote;
 };
 
 export async function RepresentativesBoard({ publicVoterId, currentVote }: Props) {
