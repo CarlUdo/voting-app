@@ -10,7 +10,7 @@ export async function PublicVotingPage() {
         <Heading title="Vote for your representative" />
       </header>
       <section className="p-4">
-        <PublicVotingSelector publicVoters={publicVoters} />        
+        <PublicVotingSelector publicVoters={publicVoters} />
       </section>
       <RepresentativesBoard />
     </main>

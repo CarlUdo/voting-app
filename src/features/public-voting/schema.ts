@@ -2,7 +2,7 @@ import {
   pgTable,
   uuid as pgUuid,
   timestamp,
-  varchar
+  varchar,
 } from "drizzle-orm/pg-core";
 import { v4 } from "uuid";
 

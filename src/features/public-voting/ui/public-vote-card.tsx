@@ -2,7 +2,7 @@ import { RepresentativeType } from "@/libs";
 
 type Props = {
   representative: RepresentativeType;
-}
+};
 
 export function PublicVoteCard({ representative }: Props) {
   return (
@@ -14,9 +14,9 @@ export function PublicVoteCard({ representative }: Props) {
               <h2 className="text-xl font-semibold">{representative.name}</h2>
               <p className="text-sm text-gray-500">{representative.email}</p>
             </div>
-          </header>        
+          </header>
         </div>
-      </div>       
+      </div>
     </article>
   );
-} 
+}

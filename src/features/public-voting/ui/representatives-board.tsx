@@ -5,7 +5,12 @@ export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();
   return (
     <>
-      {representatives.map(representative => <PublicVoteCard key={representative.id} representative={representative} />)}
+      {representatives.map((representative) => (
+        <PublicVoteCard
+          key={representative.id}
+          representative={representative}
+        />
+      ))}
     </>
   );
 }
