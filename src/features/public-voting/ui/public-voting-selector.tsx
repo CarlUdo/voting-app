@@ -1,14 +1,7 @@
-export function PublicVotingSelector() {
-  const voters = [
-    {
-      id: 1,
-      name: 'carl'
-    },
-    {
-      id: 2,
-      name: 'Andreas'
-    },
-  ];
+import { publicVotingService } from "../instance";
+
+export async function PublicVotingSelector() {
+  const voters = await publicVotingService.getAllPublicVoters();
 
   return (
     <div className="form-control w-full max-w-xs mb-8">
