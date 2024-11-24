@@ -1,16 +1,21 @@
-import { represenativesService } from "../instance";
+
 import { Representative } from ".";
+import { represenativesService } from "../instance";
 
 export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Representatives</h1>
+    <section className="p-4">
+      <header>
+        <h2 className="text-2xl font-bold mb-4">Representatives</h2>
+      </header>
       <div className="grid grid-cols-1 gap-4">
         {representatives.map((representative) => (
-          <Representative key={representative.id} data={representative} />
+          <article key={representative.id}>
+            <Representative data={representative} />
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
