@@ -1,4 +1,3 @@
-
 import { RepresentativeType } from "@/libs";
 import { faker } from "@faker-js/faker";
 
