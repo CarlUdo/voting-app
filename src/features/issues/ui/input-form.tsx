@@ -37,7 +37,9 @@ export function InputForm() {
       <fieldset className="flex flex-col gap-4">
         <legend className="sr-only">New Issue</legend>
         <div className="flex items-center gap-2 mr-4">
-          <label htmlFor="name" className="sr-only">Issue Name</label>
+          <label htmlFor="name" className="sr-only">
+            Issue Name
+          </label>
           <input
             required
             name="name"
@@ -58,7 +60,9 @@ export function InputForm() {
           <h3 className="text-lg font-semibold">Choices</h3>
           {choices.map((choice, index) => (
             <div key={index} className="flex gap-2 min-w-80 max-w-fit">
-              <label htmlFor={`choice-${index}`} className="sr-only">Choice {index + 1}</label>
+              <label htmlFor={`choice-${index}`} className="sr-only">
+                Choice {index + 1}
+              </label>
               <input
                 type="text"
                 value={choice}
