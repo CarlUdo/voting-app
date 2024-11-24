@@ -6,7 +6,8 @@ type Props = {
 };
 
 export async function IssuesBoard({ selectedRepId }: Props) {
-  const representatives = await representativesVotingService.getAllRepresentatives();
+  const representatives =
+    await representativesVotingService.getAllRepresentatives();
   const issues = await representativesVotingService.getActiveIssues();
   return (
     <>
@@ -17,10 +18,7 @@ export async function IssuesBoard({ selectedRepId }: Props) {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {issues.map((issue) => (
-              <IssuesVoteCard 
-                key={issue.id} 
-                issue={issue}    
-              />
+            <IssuesVoteCard key={issue.id} issue={issue} />
           ))}
         </div>
       )}

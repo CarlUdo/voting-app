@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 
 export const createService = (db: Db) => {
   return {
-    getAllRepresentatives: async () => 
+    getAllRepresentatives: async () =>
       await db.select().from(represenativesTable),
     getActiveIssues: async () => {
       const issues = await db
@@ -15,10 +15,10 @@ export const createService = (db: Db) => {
 
       const choices = await db.select().from(choicesTable);
 
-      return issues.map(issue => ({
+      return issues.map((issue) => ({
         ...issue,
-        choices: choices.filter(choice => choice.issueId === issue.id)
+        choices: choices.filter((choice) => choice.issueId === issue.id),
       }));
-    },    
+    },
   };
 };

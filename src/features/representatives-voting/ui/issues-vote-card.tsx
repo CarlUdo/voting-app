@@ -1,7 +1,7 @@
 import { IssueType } from "@/features/issues";
 
 type Props = {
-  issue: IssueType
+  issue: IssueType;
 };
 
 export function IssuesVoteCard({ issue }: Props) {
@@ -19,14 +19,9 @@ export function IssuesVoteCard({ issue }: Props) {
           </div>
         </section>
         <footer>
-          <button
-            className="btn btn-primary w-full"
-          >
-            Vote
-          </button>
+          <button className="btn btn-primary w-full">Vote</button>
         </footer>
       </div>
     </article>
   );
-} 
-
+}

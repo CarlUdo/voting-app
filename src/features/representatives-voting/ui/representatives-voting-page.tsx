@@ -9,7 +9,8 @@ type Props = {
 };
 
 export async function RepresenativesVotingPage({ searchParams }: Props) {
-  const representatives = await representativesVotingService.getAllRepresentatives();
+  const representatives =
+    await representativesVotingService.getAllRepresentatives();
   const selectedRepId = searchParams.representativeId;
 
   return (
@@ -21,9 +22,7 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
         <RepresentativesVotingSelector representatives={representatives} />
       </section>
       <Suspense fallback={<div>Loading...</div>}>
-        <IssuesBoard
-          selectedRepId={selectedRepId}
-        />
+        <IssuesBoard selectedRepId={selectedRepId} />
       </Suspense>
     </main>
   );
