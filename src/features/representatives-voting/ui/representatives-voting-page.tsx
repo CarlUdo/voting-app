@@ -16,7 +16,7 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
   return (
     <main>
       <header>
-        <Heading title="Vote for your representative" />
+        <Heading title="Vote for issue" />
       </header>
       <section className="p-4">
         <RepresentativesVotingSelector representatives={representatives} />
