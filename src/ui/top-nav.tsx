@@ -14,6 +14,10 @@ const links = [
     href: "/issues",
   },
   {
+    name: "Public-voting",
+    href: "/public-voting",
+  },
+  {
     name: "Stats",
     href: "/stats",
   },
