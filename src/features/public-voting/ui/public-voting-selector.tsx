@@ -19,7 +19,7 @@ export function PublicVotingSelector({ publicVoters }: Props) {
 
   return (
     <div className="form-control w-full max-w-xs mb-8">
-      <select 
+      <select
         className="select select-bordered"
         value={currentVoterId}
         onChange={handleChange}

@@ -4,20 +4,21 @@ import { VoteForm } from "./vote-form";
 
 type Props = {
   representative: RepresentativeType;
-  publicVoterId: string;                
+  publicVoterId: string;
   isCurrentVote: boolean;
 };
 
-export function PublicVoteCard({ representative, publicVoterId, isCurrentVote }: Props) {
+export function PublicVoteCard({
+  representative,
+  publicVoterId,
+  isCurrentVote,
+}: Props) {
   return (
-    <article 
-      className={clsx(
-        "card shadow-md p-4 bg-white rounded-lg border",
-        {
-          "border-blue-500 border-2": isCurrentVote,
-          "border-gray-200": !isCurrentVote,
-        }
-      )}
+    <article
+      className={clsx("card shadow-md p-4 bg-white rounded-lg border", {
+        "border-blue-500 border-2": isCurrentVote,
+        "border-gray-200": !isCurrentVote,
+      })}
     >
       <div>
         <div className="flex flex-col gap-4">
@@ -28,7 +29,10 @@ export function PublicVoteCard({ representative, publicVoterId, isCurrentVote }:
             </div>
           </header>
           <footer>
-            <VoteForm publicVoterId={publicVoterId} representativeId={representative.id} />
+            <VoteForm
+              publicVoterId={publicVoterId}
+              representativeId={representative.id}
+            />
           </footer>
         </div>
       </div>

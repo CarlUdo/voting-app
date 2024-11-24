@@ -14,7 +14,7 @@ export const createService = (db: Db) => {
         .where(eq(publicVotesTable.publicVoterId, publicVoterId))
         .orderBy(desc(publicVotesTable.dateCreated))
         .limit(1);
-      
+
       return votes[0];
     },
     add: async (rawData: NewPublicVote) => {

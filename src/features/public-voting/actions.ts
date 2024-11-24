@@ -14,4 +14,4 @@ export const addPublicVoteAction = async (formData: FormData) => {
   }
 
   revalidatePath("/public-voting");
-}; 
+};

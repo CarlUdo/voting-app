@@ -12,7 +12,7 @@ export function VoteForm({ publicVoterId, representativeId }: Props) {
     const formData = new FormData();
     formData.append("publicVoterId", publicVoterId);
     formData.append("representativeId", representativeId);
-    await addPublicVoteAction (formData);
+    await addPublicVoteAction(formData);
   };
 
   return (
@@ -24,4 +24,4 @@ export function VoteForm({ publicVoterId, representativeId }: Props) {
       </button>
     </form>
   );
-} 
+}
