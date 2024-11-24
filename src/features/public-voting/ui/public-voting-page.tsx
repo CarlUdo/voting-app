@@ -1,9 +1,15 @@
 import { Heading } from "@/ui";
 import { PublicVotingSelector, RepresentativesBoard } from ".";
 import { publicVotingService } from "../instance";
+import { Suspense } from "react";
 
-export async function PublicVotingPage() {
+type Props = {
+  searchParams: { voterId?: string };
+};
+
+export async function PublicVotingPage({ searchParams }: Props) {
   const publicVoters = await publicVotingService.getAllPublicVoters();
+
   return (
     <main>
       <header>
@@ -12,7 +18,9 @@ export async function PublicVotingPage() {
       <section className="p-4">
         <PublicVotingSelector publicVoters={publicVoters} />
       </section>
-      <RepresentativesBoard />
+      <Suspense fallback={<div>Loading...</div>}> 
+        <RepresentativesBoard /> 
+      </Suspense>
     </main>
   );
 }

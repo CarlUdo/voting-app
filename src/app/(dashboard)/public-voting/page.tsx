@@ -1,5 +1,9 @@
 import { PublicVotingPage } from "@/features/public-voting/ui";
 
-export default function Page() {
-  return <PublicVotingPage />;
+type Props = {
+  searchParams: { voterId?: string };
+};
+
+export default function Page( { searchParams }: Props) {
+  return <PublicVotingPage searchParams={searchParams} />;
 }
