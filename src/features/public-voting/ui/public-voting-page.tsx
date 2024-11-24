@@ -1,4 +1,6 @@
 import { Heading } from "@/ui";
+import { RepresentativesBoard } from ".";
+
 
 export function PublicVotingPage() {
   const voters = [
@@ -31,6 +33,7 @@ export function PublicVotingPage() {
           </select>
         </div>
       </section>
+      <RepresentativesBoard />
     </main>
   );
 }
