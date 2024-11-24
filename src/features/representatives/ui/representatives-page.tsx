@@ -5,7 +5,7 @@ export function RepresenativesPage() {
   return (
     <main>
       <header>
-        <Heading title="Manage representative" />
+        <Heading title="Manage representatives" />
       </header>
       <section>
         <InputForm />
