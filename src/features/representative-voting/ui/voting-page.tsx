@@ -3,8 +3,13 @@ import { Heading } from "@/ui";
 import { Suspense } from "react";
 import { RepresentativeVotingSelector } from "./representative-voting-selector";
 
-export async function VotingPage() {
+type Props = {
+  searchParams: { representativeId?: string };
+};
+
+export async function VotingPage({ searchParams }: Props) {
   const representatives = await represenativesService.getAll();
+  const selectedRepId = searchParams.representativeId;
 
   return (
     <main>

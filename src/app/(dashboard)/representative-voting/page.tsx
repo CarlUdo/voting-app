@@ -1,5 +1,9 @@
 import { VotingPage } from "@/features/representative-voting/ui";
 
-export default function Page() {
-  return <VotingPage />;
+type Props = {
+  searchParams: { representativeId?: string };
+};
+
+export default function Page({ searchParams }: Props) {
+  return <VotingPage searchParams={searchParams} />;
 }
