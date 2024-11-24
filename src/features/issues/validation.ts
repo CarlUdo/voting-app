@@ -11,7 +11,7 @@ export const newChoiceSchema = z.object({
 export const choiceSchema = idSchema.merge(
   newChoiceSchema.extend({
     issueId: z.string().uuid(),
-  })
+  }),
 );
 
 export const newIssueSchema = z.object({
@@ -23,8 +23,8 @@ export const issueSchema = idSchema.merge(
   newIssueSchema.extend({
     active: z.boolean(),
     dateCreated: z.date(),
-    choices: z.array(choiceSchema), 
-  })
+    choices: z.array(choiceSchema),
+  }),
 );
 
 export type NewIssue = z.infer<typeof newIssueSchema>;

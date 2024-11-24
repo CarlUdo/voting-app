@@ -22,15 +22,13 @@ export const createService = (db: Db) => {
         .insert(issuesTable)
         .values({ id: issueId, name: issue.name, active: true });
       if (issue.choices.length > 0) {
-        await db
-          .insert(choicesTable)
-          .values(
-            issue.choices.map((choice) => ({
-              id: v4(),
-              issueId,
-              name: choice.name,
-            })),
-          );
+        await db.insert(choicesTable).values(
+          issue.choices.map((choice) => ({
+            id: v4(),
+            issueId,
+            name: choice.name,
+          })),
+        );
       }
     },
     updateActive: async (id: string, active: boolean) => {
