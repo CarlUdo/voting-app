@@ -1,7 +1,8 @@
-import type { Representative } from "@/features/representatives";
+
+import { RepresentativeType } from "@/libs";
 import { faker } from "@faker-js/faker";
 
-export const getPeople = (numberOfPeople: number): Representative[] => {
+export const getPeople = (numberOfPeople: number): RepresentativeType[] => {
   const people = [];
 
   for (let i = 0; i < numberOfPeople; i++) {
