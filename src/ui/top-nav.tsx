@@ -18,8 +18,8 @@ const links = [
     href: "/public-voting",
   },
   {
-    name: "Representative-voting",
-    href: "/representative-voting",
+    name: "Representatives-voting",
+    href: "/representatives-voting",
   },
   {
     name: "Stats",
