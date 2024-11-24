@@ -1,15 +1,15 @@
-import { represenativesService } from "@/features/representatives";
 import { Heading } from "@/ui";
 import { Suspense } from "react";
 import { RepresentativesVotingSelector } from "./representatives-voting-selector";
 import { IssuesBoard } from "./issues-board";
+import { representativesVotingService } from "../instance";
 
 type Props = {
   searchParams: { representativeId?: string };
 };
 
 export async function RepresenativesVotingPage({ searchParams }: Props) {
-  const representatives = await represenativesService.getAll();
+  const representatives = await representativesVotingService.getAllRepresentatives();
   const selectedRepId = searchParams.representativeId;
 
   return (
@@ -22,7 +22,6 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
       </section>
       <Suspense fallback={<div>Loading...</div>}>
         <IssuesBoard
-          representatives={representatives}
           selectedRepId={selectedRepId}
         />
       </Suspense>
