@@ -1,6 +1,5 @@
 import { Heading } from "@/ui";
-import { InputForm } from "./input-form";
-import { RepresentativeBoard } from "./representative-board";
+import { InputForm, RepresentativeBoard } from ".";
 
 export function RepresenativesPage() {
   return (
