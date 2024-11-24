@@ -1,6 +1,6 @@
 import { Heading } from "@/ui";
 import { InputForm } from "./input-form";
-import { IssueBoard } from "./issue-board";
+import { IssuesBoard } from "./issues-board";
 
 export function IssuesPage() {
   return (
@@ -12,7 +12,7 @@ export function IssuesPage() {
         <InputForm />
       </section>
       <section>
-        <IssueBoard />
+        <IssuesBoard />
       </section>
     </main>
   );
