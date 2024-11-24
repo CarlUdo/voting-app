@@ -5,9 +5,11 @@ import { issuesService } from "./instance";
 
 export const addIssueAction = async (formData: FormData) => {
   const name = formData.get("name") as string;
+  const choicesJson = formData.get("choices") as string;
+  const choices = JSON.parse(choicesJson);
 
   try {
-    await issuesService.add({ name, active: true });
+    await issuesService.add({ name, choices });
   } catch (error) {
     console.log(error);
   }
