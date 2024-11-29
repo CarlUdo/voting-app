@@ -21,3 +21,5 @@ The app should help us understand how well the public voters agrees with their r
 ## Big picture plan
 
 ![bbp](src/assets/BPP.png)
+
+[Planning board](https://github.com/users/CarlUdo/projects/4)
