@@ -1,4 +1,4 @@
 export * from "./input-form";
-export * from "./representatives-page";
-export * from "./representatives-board";
 export * from "./representative";
+export * from "./representatives-board";
+export * from "./representatives-page";

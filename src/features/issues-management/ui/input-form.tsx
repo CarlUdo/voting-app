@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { addIssueAction } from "../";
+import { addIssueAction } from "../actions";
 
 export function InputForm() {
   const [choices, setChoices] = useState<string[]>([""]);

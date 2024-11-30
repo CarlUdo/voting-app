@@ -1,4 +1,4 @@
-import { addRepresentativeAction } from "../actions";
+import { addRepresentativeAction } from "..";
 
 export function InputForm() {
   return (

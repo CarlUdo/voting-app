@@ -1,5 +1,5 @@
 import { Representative } from ".";
-import { represenativesService } from "../instance";
+import { represenativesService } from "..";
 
 export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();

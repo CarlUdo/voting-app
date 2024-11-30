@@ -1,4 +1,4 @@
-import { issuesService } from "../";
+import { issuesService } from "../instance";
 import { Issue } from ".";
 
 export async function IssuesBoard() {
