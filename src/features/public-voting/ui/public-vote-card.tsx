@@ -27,6 +27,9 @@ export function PublicVoteCard({
               <h2 className="text-xl font-semibold">{representative.name}</h2>
               <p className="text-sm text-gray-500">{representative.email}</p>
             </div>
+            {isCurrentVote && (
+            <span className="badge badge-primary">Current Vote</span>
+          )}
           </header>
           <footer>
             <VoteForm
