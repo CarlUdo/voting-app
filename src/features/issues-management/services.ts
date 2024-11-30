@@ -37,5 +37,18 @@ export const createService = (db: Db) => {
         .set({ active })
         .where(eq(issuesTable.id, id));
     },
+    getActiveIssues: async () => {
+      const issues = await db
+        .select()
+        .from(issuesTable)
+        .where(eq(issuesTable.active, true));
+
+      const choices = await db.select().from(choicesTable);
+
+      return issues.map((issue) => ({
+        ...issue,
+        choices: choices.filter((choice) => choice.issueId === issue.id),
+      }));
+    },
   };
 };

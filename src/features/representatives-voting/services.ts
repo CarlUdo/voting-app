@@ -1,6 +1,6 @@
 import { Db } from "@/db";
 import { represenativesService } from "../representatives-management";
-import { choicesTable, issuesTable } from "../issues-management";
+import { issuesService, } from "../issues-management";
 import { and, desc, eq } from "drizzle-orm";
 import { representativeVotesTable } from ".";
 import { newRepresentativeVoteSchema, type NewRepresentativeVote } from ".";
@@ -12,17 +12,7 @@ export const createService = (db: Db) => {
       await represenativesService.getAll(),
 
     getActiveIssues: async () => {
-      const issues = await db
-        .select()
-        .from(issuesTable)
-        .where(eq(issuesTable.active, true));
-
-      const choices = await db.select().from(choicesTable);
-
-      return issues.map((issue) => ({
-        ...issue,
-        choices: choices.filter((choice) => choice.issueId === issue.id),
-      }));
+      await issuesService.getActiveIssues();
     },
 
     getLatestVoteByRepresentativeAndIssue: async (
