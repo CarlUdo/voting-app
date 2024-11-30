@@ -22,13 +22,14 @@ export async function PublicVotingPage({ searchParams }: Props) {
       </header>
       <section className="p-4">
         <PublicVotingSelector publicVoters={publicVoters} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <RepresentativesBoard
+            publicVoterId={selectedVoterId}
+            currentVote={currentVote}
+          />
+        </Suspense>
       </section>
-      <Suspense fallback={<div>Loading...</div>}>
-        <RepresentativesBoard
-          publicVoterId={selectedVoterId}
-          currentVote={currentVote}
-        />
-      </Suspense>
+      
     </main>
   );
 }
