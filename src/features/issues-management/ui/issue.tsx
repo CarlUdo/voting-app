@@ -1,5 +1,5 @@
-import { IssueType } from "../validation";
-import { DeactivateButton } from "./deactivate-button";
+import { IssueType } from "../";
+import { DeactivateButton } from ".";
 
 export function Issue({ data }: { data: IssueType }) {
   return (
