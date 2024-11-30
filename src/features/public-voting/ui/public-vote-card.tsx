@@ -28,8 +28,8 @@ export function PublicVoteCard({
               <p className="text-sm text-gray-500">{representative.email}</p>
             </div>
             {isCurrentVote && (
-            <span className="badge badge-primary">Current Vote</span>
-          )}
+              <span className="badge badge-primary">Current Vote</span>
+            )}
           </header>
           <footer>
             <VoteForm

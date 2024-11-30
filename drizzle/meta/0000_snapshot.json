@@ -1,9 +1,81 @@
 {
-  "id": "c7cb6534-6fd1-45c3-ab8e-f096562c7ea9",
+  "id": "567bd3c0-78ef-4e72-81cc-3e3487cb2639",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.choices": {
+      "name": "choices",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "'d4f081e7-a0d6-40cd-8bc6-cb20dcb17592'"
+        },
+        "issueId": {
+          "name": "issueId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.issues": {
+      "name": "issues",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "'ab11ecbb-e5b4-42ea-8ff2-9062fdba4eb8'"
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "active": {
+          "name": "active",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "dateCreated": {
+          "name": "dateCreated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public.public_voters": {
       "name": "public_voters",
       "schema": "",
@@ -13,7 +85,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'b1d15213-f68c-420c-b1f7-080aed75e72b'"
+          "default": "'c5336970-dd4b-4d58-856a-ed6bb4bcbe84'"
         },
         "name": {
           "name": "name",
@@ -35,9 +107,50 @@
         "public_voters_email_unique": {
           "name": "public_voters_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.public_votes": {
+      "name": "public_votes",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "'7afa86ea-25fc-4abe-a401-c343e968403c'"
+        },
+        "publicVoterId": {
+          "name": "publicVoterId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "representativeId": {
+          "name": "representativeId",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dateCreated": {
+          "name": "dateCreated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -51,7 +164,7 @@
           "type": "uuid",
           "primaryKey": true,
           "notNull": true,
-          "default": "'2cc925b0-12e6-403a-b2a2-1f771a373f04'"
+          "default": "'43b1ce83-9ded-4055-9ba8-ce609e71353b'"
         },
         "name": {
           "name": "name",
@@ -73,7 +186,9 @@
         "represenatives_email_unique": {
           "name": "represenatives_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       },
       "policies": {},

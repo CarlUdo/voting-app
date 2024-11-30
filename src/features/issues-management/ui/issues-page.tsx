@@ -17,7 +17,6 @@ export function IssuesPage() {
   );
 }
 
-
 // export function RepresenativesPage() {
 //   return (
 //     <main>
@@ -34,7 +33,6 @@ export function IssuesPage() {
 //   );
 // }
 
-
 //import { Heading } from "@/ui";
 //import { InputForm, IssuesBoard } from ".";
 
@@ -46,14 +44,9 @@ export function IssuesPage() {
 //   );
 // }
 
+// return (
+//   <main>
 
-
-
-     
-
-      // return (
-      //   <main>
-          
-      //     hej hej
-      //   </main>
-      // );
+//     hej hej
+//   </main>
+// );

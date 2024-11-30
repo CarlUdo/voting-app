@@ -25,7 +25,9 @@ export async function RepresentativesBoard({
               key={representative.id}
               representative={representative}
               publicVoterId={publicVoterId}
-              isCurrentVote={currentVote?.representativeId === representative.id}
+              isCurrentVote={
+                currentVote?.representativeId === representative.id
+              }
             />
           ))}
         </div>
