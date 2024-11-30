@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { represenativesService } from "./instance";
+import { represenativesService } from ".";
 
 export const addRepresentativeAction = async (formData: FormData) => {
   const name = formData.get("name") as string;
@@ -13,5 +13,5 @@ export const addRepresentativeAction = async (formData: FormData) => {
     console.log(error);
   }
 
-  revalidatePath("/representatives");
+  revalidatePath("/representatives-management");
 };
