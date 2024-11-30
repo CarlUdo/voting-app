@@ -2,6 +2,7 @@
 
 import { IssueType } from "@/features/issues-management";
 import { useState } from "react";
+import { addRepresentativeVoteAction } from "../actions";
 
 type Props = {
   issue: IssueType;
@@ -12,6 +13,14 @@ type Props = {
 export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }: Props) {
   const [selectedChoiceId, setSelectedChoiceId] = useState<string>("");
   console.log("Selected id:", selectedChoiceId);
+
+  const handleVote = async () => {
+    const formData = new FormData();
+    formData.append("representativeId", representativeId);
+    formData.append("issueId", issue.id);
+    formData.append("choiceId", selectedChoiceId);
+    await addRepresentativeVoteAction(formData);
+  };
 
   return (
     <article className="card shadow-md p-4 bg-white rounded-lg border border-gray-200">
@@ -41,7 +50,7 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
           </div>
         </section>
         <footer>
-          <button disabled={!selectedChoiceId} className="btn btn-primary w-full">Vote</button>
+          <button onClick={handleVote} disabled={!selectedChoiceId} className="btn btn-primary w-full">Vote</button>
         </footer>
       </div>
     </article>
