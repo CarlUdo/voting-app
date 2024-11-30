@@ -89,6 +89,7 @@ export function TopNav() {
                     href={link.href}
                     className={clsx({
                       "text-blue-700": pathname === link.href,
+                      "text-red-600": link.href === "/",
                     })}
                   >
                     {link.name}
@@ -115,6 +116,7 @@ export function TopNav() {
                   "block px-3 py-2 rounded-md text-base font-medium",
                   {
                     "text-blue-700": pathname === link.href,
+                    "text-red-600": link.href === "/",
                   },
                 )}
               >
