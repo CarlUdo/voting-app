@@ -1,5 +1,5 @@
 import { IssueType } from "../validation";
-import { DeactivateButton } from "./deactivate-button";
+import { DeactivateButton } from "./deactivate-button"; // App crashes if I import from "." Why??
 
 export function Issue({ data }: { data: IssueType }) {
   return (
