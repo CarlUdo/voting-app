@@ -1,5 +1,7 @@
+import { relations } from "drizzle-orm";
 import { pgTable, uuid as pgUuid, timestamp } from "drizzle-orm/pg-core";
 import { v4 } from "uuid";
+import { represenativesTable } from "../representatives-management";
 
 export const representativeVotesTable = pgTable("representative_votes", {
   id: pgUuid().primaryKey().default(v4()),
@@ -8,5 +10,12 @@ export const representativeVotesTable = pgTable("representative_votes", {
   choiceId: pgUuid().notNull(),
   dateCreated: timestamp().notNull().defaultNow(),
 });
+
+export const representativeVotesRelations = relations(representativeVotesTable, ({ one }) => ({
+  representative: one(represenativesTable, {
+    fields: [representativeVotesTable.representativeId],
+    references: [represenativesTable.id],
+  }),
+})); 
 
 
