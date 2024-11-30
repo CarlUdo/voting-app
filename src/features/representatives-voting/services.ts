@@ -7,6 +7,7 @@ export const createService = (db: Db) => {
   return {
     getAllRepresentatives: async () =>
       await db.select().from(represenativesTable),
+    
     getActiveIssues: async () => {
       const issues = await db
         .select()
@@ -19,6 +20,22 @@ export const createService = (db: Db) => {
         ...issue,
         choices: choices.filter((choice) => choice.issueId === issue.id),
       }));
+    },
+
+    getLatestVoteByRepresentativeAndIssue: async (representativeId: string, issueId: string) => {
+      const votes = await db
+        .select()
+        .from(representativeVotesTab)
+        .where(
+          and(
+            eq(representativeVotesTable.representativeId, representativeId),
+            eq(representativeVotesTable.issueId, issueId)
+          )
+        )
+        .orderBy(desc(representativeVotesTable.dateCreated))
+        .limit(1);
+      
+      return votes[0];
     },
   };
 };
