@@ -1,5 +1,5 @@
 import { Db } from "@/db";
-import { represenativesTable } from "../representatives-management";
+import { represenativesService } from "../representatives-management";
 import { choicesTable, issuesTable } from "../issues-management";
 import { and, desc, eq } from "drizzle-orm";
 import { representativeVotesTable } from ".";
@@ -9,7 +9,7 @@ import { v4 } from "uuid";
 export const createService = (db: Db) => {
   return {
     getAllRepresentatives: async () =>
-      await db.select().from(represenativesTable),
+      await represenativesService.getAll(),
 
     getActiveIssues: async () => {
       const issues = await db
