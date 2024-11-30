@@ -1,6 +1,6 @@
 import { Db } from "@/db";
 import { represenativesTable } from "../representatives-management/schema";
-import { choicesTable, issuesTable } from "../issues/schema";
+import { choicesTable, issuesTable } from "../issues-management/schema";
 import { eq } from "drizzle-orm";
 
 export const createService = (db: Db) => {

@@ -1,4 +1,4 @@
-import { IssueType } from "@/features/issues";
+import { IssueType } from "@/features/issues-management";
 
 type Props = {
   issue: IssueType;

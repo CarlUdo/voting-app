@@ -8,7 +8,7 @@ import { useState } from "react";
 const links = [
   {
     name: "Issues",
-    href: "/issues",
+    href: "/issues-management",
   },
   {
     name: "Representatives",
