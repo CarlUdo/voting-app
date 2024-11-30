@@ -45,6 +45,9 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
                   onChange={(e) => setSelectedChoiceId(e.target.value)}
                 />
                 <span>{choice.name}</span>
+                {currentVoteChoiceId === choice.id && (
+                  <span className="ml-auto badge badge-success">Current Vote</span>
+                )}
               </label>
             ))}
           </div>
