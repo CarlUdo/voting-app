@@ -17,7 +17,19 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
         <section className="flex flex-col gap-2">
           <h3 className="font-semibold">Choices:</h3>
           <div className="flex flex-col gap-2">
-            Mapping and logic remians...
+          {issue.choices.map((choice) => (
+              <label
+                key={choice.id}
+              >
+                <input
+                  type="radio"
+                  name={`choice-${issue.id}`}
+                  value={choice.id}
+                  className="radio radio-primary mr-2"
+                />
+                <span>{choice.name}</span>
+              </label>
+            ))}
           </div>
         </section>
         <footer>
