@@ -1,7 +1,6 @@
 import { Heading } from "@/ui";
 import { Suspense } from "react";
-import { RepresentativesVotingSelector } from "./representatives-voting-selector";
-import { IssuesBoard } from "./issues-board";
+import { RepresentativesVotingSelector, IssuesBoard} from ".";
 import { representativesVotingService } from "../instance";
 
 type Props = {
@@ -16,7 +15,7 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
   return (
     <main>
       <header>
-        <Heading title="Vote for issue" />
+        <Heading title="Representative vote for issue" />
       </header>
       <section className="p-4">
         <RepresentativesVotingSelector representatives={representatives} />
