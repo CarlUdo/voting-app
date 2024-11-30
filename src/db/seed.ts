@@ -1,4 +1,4 @@
-import { represenativesTable } from "@/features/representatives/schema";
+import { represenativesTable } from "@/features/representatives-management/schema";
 import { db } from ".";
 import { getPeople } from "./seed-helpers";
 import { publicVotersTable } from "@/features/public-voting";

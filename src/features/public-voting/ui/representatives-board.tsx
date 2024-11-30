@@ -1,4 +1,4 @@
-import { represenativesService } from "@/features/representatives/instance";
+import { represenativesService } from "@/features/representatives-management/instance";
 import { PublicVoteCard } from "./public-vote-card";
 import { PublicVote } from "../validation";
 

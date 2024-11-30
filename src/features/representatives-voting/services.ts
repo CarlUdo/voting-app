@@ -1,5 +1,5 @@
 import { Db } from "@/db";
-import { represenativesTable } from "../representatives/schema";
+import { represenativesTable } from "../representatives-management/schema";
 import { choicesTable, issuesTable } from "../issues/schema";
 import { eq } from "drizzle-orm";
 

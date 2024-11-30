@@ -5,7 +5,7 @@ export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();
   return (
     <section className="p-4">
-      <header>
+      {/* <header>
         <h2 className="text-2xl font-bold mb-4">Representatives</h2>
       </header>
       <div className="grid grid-cols-1 gap-4">
@@ -14,7 +14,7 @@ export async function RepresentativesBoard() {
             <Representative data={representative} />
           </article>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }
