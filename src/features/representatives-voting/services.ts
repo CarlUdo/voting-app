@@ -1,8 +1,10 @@
 import { Db } from "@/db";
-import { represenativesTable } from "../representatives-management/schema";
-import { choicesTable, issuesTable } from "../issues-management/schema";
+import { represenativesTable } from "../representatives-management";
+import { choicesTable, issuesTable } from "../issues-management";
 import { and, desc, eq } from "drizzle-orm";
-import { representativeVotesTable } from "./schema";
+import { representativeVotesTable } from ".";
+import { newRepresentativeVoteSchema, type NewRepresentativeVote } from ".";
+import { v4 } from "uuid";
 
 export const createService = (db: Db) => {
   return {
@@ -37,6 +39,13 @@ export const createService = (db: Db) => {
         .limit(1);
       
       return votes[0];
+    },
+
+    add: async (rawData: NewRepresentativeVote) => {
+      const vote = newRepresentativeVoteSchema.parse(rawData);
+      await db
+        .insert(representativeVotesTable)
+        .values({ id: v4(), ...vote, dateCreated: new Date() });
     },
   };
 };
