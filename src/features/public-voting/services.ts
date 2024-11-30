@@ -18,8 +18,7 @@ export const createService = (db: Db) => {
 
       return votes[0];
     },
-    getAllRepresentatives: async () =>
-      await represenativesService.getAll(),
+    getAllRepresentatives: async () => await represenativesService.getAll(),
     add: async (rawData: NewPublicVote) => {
       const vote = newPublicVoteSchema.parse(rawData);
       await db

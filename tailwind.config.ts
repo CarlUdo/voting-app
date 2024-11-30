@@ -6,5 +6,5 @@ export default {
   daisyui: {
     themes: ["light"],
   },
-  plugins: [daisyui]
+  plugins: [daisyui],
 } satisfies Config;
