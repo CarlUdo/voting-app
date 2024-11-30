@@ -11,9 +11,7 @@ export const createService = (db: Db) => {
     getAllRepresentatives: async () =>
       await represenativesService.getAll(),
 
-    getActiveIssues: async () => {
-      await issuesService.getActiveIssues();
-    },
+    getActiveIssues: async () => await issuesService.getActiveIssues(),
 
     getLatestVoteByRepresentativeAndIssue: async (
       representativeId: string,
