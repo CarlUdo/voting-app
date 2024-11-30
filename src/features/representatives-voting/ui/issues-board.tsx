@@ -9,6 +9,18 @@ export async function IssuesBoard({ selectedRepId }: Props) {
   const representatives =
     await representativesVotingService.getAllRepresentatives();
   const issues = await representativesVotingService.getActiveIssues();
+  
+  const currentVotes = selectedRepId
+    ? await Promise.all(
+        issues.map((issue) =>
+          representativesVotingService.getLatestVoteByRepresentativeAndIssue(
+            selectedRepId,
+            issue.id
+          )
+        )
+      )
+    : [];
+
   return (
     <>
       {!selectedRepId ? (
@@ -20,7 +32,9 @@ export async function IssuesBoard({ selectedRepId }: Props) {
           {issues.map((issue) => (
             <IssuesVoteCard 
               key={issue.id} 
-              issue={issue} 
+              issue={issue}
+              representativeId={selectedRepId}
+              currentVoteChoiceId={currentVotes[index]?.choiceId}
             />
           ))}
         </div>
