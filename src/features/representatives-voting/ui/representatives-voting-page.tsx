@@ -19,10 +19,10 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
       </header>
       <section className="p-4">
         <RepresentativesVotingSelector representatives={representatives} />
-      </section>
-      <Suspense fallback={<div>Loading...</div>}>
-        <IssuesBoard selectedRepId={selectedRepId} />
-      </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <IssuesBoard selectedRepId={selectedRepId} />
+        </Suspense>
+      </section>      
     </main>
   );
 }
