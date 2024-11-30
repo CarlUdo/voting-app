@@ -82,17 +82,22 @@ export function TopNav() {
             </button>
           </div>
           <div className="hidden sm:flex sm:items-center">
-            <div className="flex space-x-4">
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={clsx("ml-2", {
-                    "text-blue-700": pathname === link.href,
-                  })}
-                >
-                  {link.name}
-                </Link>
+            <div className="flex space-x-3">
+              {links.map((link, index) => (
+                <>
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={clsx("ml-2", {
+                      "text-blue-700": pathname === link.href,
+                    })}
+                  >
+                    {link.name}
+                  </Link>
+                  {index < links.length - 1 && (
+                    <span key={index} className="mx-2 text-gray-400">|</span>
+                  )}
+                </>
               ))}
             </div>
           </div>
@@ -101,19 +106,24 @@ export function TopNav() {
       {isOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={clsx(
-                  "block px-3 py-2 rounded-md text-base font-medium",
-                  {
-                    "text-blue-700": pathname === link.href,
-                  },
+            {links.map((link, index) => (
+              <>
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={clsx(
+                    "block px-3 py-2 rounded-md text-base font-medium",
+                    {
+                      "text-blue-700": pathname === link.href,
+                    },
+                  )}
+                >
+                  {link.name}
+                </Link>
+                {index < links.length - 1 && (
+                  <span className="block mx-3 text-gray-400">|</span>
                 )}
-              >
-                {link.name}
-              </Link>
+              </>
             ))}
           </div>
         </div>
