@@ -2,9 +2,11 @@ import { IssueType } from "@/features/issues-management";
 
 type Props = {
   issue: IssueType;
+  representativeId: string;
+  currentVoteChoiceId?: string;
 };
 
-export function IssuesVoteCard({ issue }: Props) {
+export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }: Props) {
   return (
     <article className="card shadow-md p-4 bg-white rounded-lg border border-gray-200">
       <div className="flex flex-col gap-4">

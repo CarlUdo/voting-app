@@ -29,7 +29,7 @@ export async function IssuesBoard({ selectedRepId }: Props) {
         <p className="text-center text-gray-500">No active issues found</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {issues.map((issue) => (
+          {issues.map((issue, index) => (
             <IssuesVoteCard 
               key={issue.id} 
               issue={issue}

@@ -1,7 +1,8 @@
 import { Db } from "@/db";
 import { represenativesTable } from "../representatives-management/schema";
 import { choicesTable, issuesTable } from "../issues-management/schema";
-import { eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
+import { representativeVotesTable } from "./schema";
 
 export const createService = (db: Db) => {
   return {
@@ -25,7 +26,7 @@ export const createService = (db: Db) => {
     getLatestVoteByRepresentativeAndIssue: async (representativeId: string, issueId: string) => {
       const votes = await db
         .select()
-        .from(representativeVotesTab)
+        .from(representativeVotesTable)
         .where(
           and(
             eq(representativeVotesTable.representativeId, representativeId),
