@@ -41,7 +41,7 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
           </div>
         </section>
         <footer>
-          <button className="btn btn-primary w-full">Vote</button>
+          <button disabled={!selectedChoiceId} className="btn btn-primary w-full">Vote</button>
         </footer>
       </div>
     </article>
