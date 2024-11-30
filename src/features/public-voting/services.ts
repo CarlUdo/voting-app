@@ -3,6 +3,7 @@ import { publicVotersTable, publicVotesTable } from "./schema";
 import { desc, eq } from "drizzle-orm";
 import { NewPublicVote, newPublicVoteSchema } from "./validation";
 import { v4 } from "uuid";
+import { represenativesTable } from "../representatives-management";
 
 export const createService = (db: Db) => {
   return {
@@ -17,6 +18,7 @@ export const createService = (db: Db) => {
 
       return votes[0];
     },
+    getAllRepresentatives: async () => await db.select().from(represenativesTable),
     add: async (rawData: NewPublicVote) => {
       const vote = newPublicVoteSchema.parse(rawData);
       await db

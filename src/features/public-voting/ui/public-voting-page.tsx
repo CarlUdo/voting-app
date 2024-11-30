@@ -9,6 +9,7 @@ type Props = {
 
 export async function PublicVotingPage({ searchParams }: Props) {
   const selectedVoterId = searchParams.voterId;
+
   const currentVote = selectedVoterId
     ? await publicVotingService.getLatestVoteByPublicVoter(selectedVoterId)
     : null;

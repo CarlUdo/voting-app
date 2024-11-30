@@ -1,6 +1,6 @@
-import { represenativesService } from "@/features/representatives-management/instance";
 import { PublicVoteCard } from "./public-vote-card";
 import { PublicVote } from "../validation";
+import { publicVotingService } from "../instance";
 
 type Props = {
   publicVoterId: string | undefined;
@@ -11,7 +11,7 @@ export async function RepresentativesBoard({
   publicVoterId,
   currentVote,
 }: Props) {
-  const representatives = await represenativesService.getAll();
+  const representatives = await publicVotingService.getAllRepresentatives();
   return (
     <>
       {!publicVoterId ? (
