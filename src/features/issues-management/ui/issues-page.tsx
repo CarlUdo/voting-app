@@ -1,6 +1,5 @@
 import { Heading } from "@/ui";
-import { InputForm } from "./input-form";
-import { IssuesBoard } from "./issues-board";
+import { InputForm, IssuesBoard } from ".";
 
 export function IssuesPage() {
   return (
