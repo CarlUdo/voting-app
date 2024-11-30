@@ -1,4 +1,7 @@
+"use client";
+
 import { IssueType } from "@/features/issues-management";
+import { useState } from "react";
 
 type Props = {
   issue: IssueType;
@@ -7,6 +10,9 @@ type Props = {
 };
 
 export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }: Props) {
+  const [selectedChoiceId, setSelectedChoiceId] = useState<string>("");
+  console.log("Selected id:", selectedChoiceId);
+
   return (
     <article className="card shadow-md p-4 bg-white rounded-lg border border-gray-200">
       <div className="flex flex-col gap-4">
@@ -25,7 +31,9 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
                   type="radio"
                   name={`choice-${issue.id}`}
                   value={choice.id}
-                  className="radio radio-primary mr-2"
+                  className="radio radio-primary mr-2" 
+                  checked={selectedChoiceId === choice.id}                
+                  onChange={(e) => setSelectedChoiceId(e.target.value)}
                 />
                 <span>{choice.name}</span>
               </label>
