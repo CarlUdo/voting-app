@@ -6,7 +6,7 @@ export function IssuesPage() {
   return (
     <main>
       <header>
-        <Heading title="Manage issues" />
+        <Heading title="Issues management" />
       </header>
       <section>
         <InputForm />
