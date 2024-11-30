@@ -29,7 +29,6 @@ export async function PublicVotingPage({ searchParams }: Props) {
           />
         </Suspense>
       </section>
-      
     </main>
   );
 }

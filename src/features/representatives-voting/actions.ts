@@ -9,14 +9,14 @@ export const addRepresentativeVoteAction = async (formData: FormData) => {
   const choiceId = formData.get("choiceId") as string;
 
   try {
-    await representativesVotingService.add({ 
-      representativeId, 
+    await representativesVotingService.add({
+      representativeId,
       issueId,
-      choiceId 
+      choiceId,
     });
   } catch (error) {
     console.log(error);
   }
 
   revalidatePath("/representative-vote");
-}; 
+};

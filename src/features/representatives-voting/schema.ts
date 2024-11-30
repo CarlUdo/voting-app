@@ -12,17 +12,20 @@ export const representativeVotesTable = pgTable("representative_votes", {
   dateCreated: timestamp().notNull().defaultNow(),
 });
 
-export const representativeVotesRelations = relations(representativeVotesTable, ({ one }) => ({
-  representative: one(represenativesTable, {
-    fields: [representativeVotesTable.representativeId],
-    references: [represenativesTable.id],
+export const representativeVotesRelations = relations(
+  representativeVotesTable,
+  ({ one }) => ({
+    representative: one(represenativesTable, {
+      fields: [representativeVotesTable.representativeId],
+      references: [represenativesTable.id],
+    }),
+    issue: one(issuesTable, {
+      fields: [representativeVotesTable.issueId],
+      references: [issuesTable.id],
+    }),
+    choice: one(choicesTable, {
+      fields: [representativeVotesTable.choiceId],
+      references: [choicesTable.id],
+    }),
   }),
-  issue: one(issuesTable, {
-    fields: [representativeVotesTable.issueId],
-    references: [issuesTable.id],
-  }),
-  choice: one(choicesTable, {
-    fields: [representativeVotesTable.choiceId],
-    references: [choicesTable.id],
-  }),
-})); 
+);

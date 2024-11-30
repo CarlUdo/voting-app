@@ -1,6 +1,6 @@
 import { Heading } from "@/ui";
 import { Suspense } from "react";
-import { RepresentativesVotingSelector, IssuesBoard} from ".";
+import { RepresentativesVotingSelector, IssuesBoard } from ".";
 import { representativesVotingService } from "../instance";
 
 type Props = {
@@ -22,7 +22,7 @@ export async function RepresenativesVotingPage({ searchParams }: Props) {
         <Suspense fallback={<div>Loading...</div>}>
           <IssuesBoard selectedRepId={selectedRepId} />
         </Suspense>
-      </section>      
+      </section>
     </main>
   );
 }

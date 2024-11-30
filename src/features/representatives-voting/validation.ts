@@ -13,8 +13,8 @@ export const newRepresentativeVoteSchema = z.object({
 export const representativeVoteSchema = idSchema.merge(
   newRepresentativeVoteSchema.extend({
     dateCreated: z.date(),
-  })
+  }),
 );
 
 export type NewRepresentativeVote = z.infer<typeof newRepresentativeVoteSchema>;
-export type RepresentativeVoteType = z.infer<typeof representativeVoteSchema>; 
+export type RepresentativeVoteType = z.infer<typeof representativeVoteSchema>;

@@ -10,7 +10,11 @@ type Props = {
   currentVoteChoiceId?: string;
 };
 
-export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }: Props) {
+export function IssuesVoteCard({
+  issue,
+  representativeId,
+  currentVoteChoiceId,
+}: Props) {
   const [selectedChoiceId, setSelectedChoiceId] = useState<string>("");
   console.log("Selected id:", selectedChoiceId);
 
@@ -32,28 +36,34 @@ export function IssuesVoteCard({ issue, representativeId, currentVoteChoiceId }:
         <section className="flex flex-col gap-2">
           <h3 className="font-semibold">Choices:</h3>
           <div className="flex flex-col gap-2">
-          {issue.choices.map((choice) => (
-              <label
-                key={choice.id}
-              >
+            {issue.choices.map((choice) => (
+              <label key={choice.id}>
                 <input
                   type="radio"
                   name={`choice-${issue.id}`}
                   value={choice.id}
-                  className="radio radio-primary mr-2" 
-                  checked={selectedChoiceId === choice.id}                
+                  className="radio radio-primary mr-2"
+                  checked={selectedChoiceId === choice.id}
                   onChange={(e) => setSelectedChoiceId(e.target.value)}
                 />
                 <span>{choice.name}</span>
                 {currentVoteChoiceId === choice.id && (
-                  <span className="ml-auto badge badge-success">Current Vote</span>
+                  <span className="ml-auto badge badge-success">
+                    Current Vote
+                  </span>
                 )}
               </label>
             ))}
           </div>
         </section>
         <footer>
-          <button onClick={handleVote} disabled={!selectedChoiceId} className="btn btn-primary w-full">Vote</button>
+          <button
+            onClick={handleVote}
+            disabled={!selectedChoiceId}
+            className="btn btn-primary w-full"
+          >
+            Vote
+          </button>
         </footer>
       </div>
     </article>
