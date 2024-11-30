@@ -8,7 +8,7 @@ import { useState } from "react";
 const links = [
   {
     name: "Representatives",
-    href: "/representatives",
+    href: "/representatives-management",
   },
   {
     name: "Issues",
@@ -82,13 +82,12 @@ export function TopNav() {
             </button>
           </div>
           <div className="hidden sm:flex sm:items-center">
-            <div className="flex space-x-3">
+            <div className="flex">
               {links.map((link, index) => (
-                <>
-                  <Link
-                    key={link.name}
+                <span key={link.name}>
+                  <Link                    
                     href={link.href}
-                    className={clsx("ml-2", {
+                    className={clsx({
                       "text-blue-700": pathname === link.href,
                     })}
                   >
@@ -97,7 +96,7 @@ export function TopNav() {
                   {index < links.length - 1 && (
                     <span key={index} className="mx-2 text-gray-400">|</span>
                   )}
-                </>
+                </span>
               ))}
             </div>
           </div>
@@ -106,10 +105,9 @@ export function TopNav() {
       {isOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {links.map((link, index) => (
-              <>
-                <Link
-                  key={link.name}
+            {links.map((link) => (        
+                <Link   
+                  key={link.name}               
                   href={link.href}
                   className={clsx(
                     "block px-3 py-2 rounded-md text-base font-medium",
@@ -119,11 +117,7 @@ export function TopNav() {
                   )}
                 >
                   {link.name}
-                </Link>
-                {index < links.length - 1 && (
-                  <span className="block mx-3 text-gray-400">|</span>
-                )}
-              </>
+                </Link>         
             ))}
           </div>
         </div>
