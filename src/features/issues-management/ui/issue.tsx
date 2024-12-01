@@ -10,7 +10,7 @@ export function Issue({ data }: { data: IssueType }) {
       </header>
       <div className="mb-4">
         <span className={`badge ${data.active ? "badge-success" : "badge-error"}`}>
-          {data.active ? "Active" : "Inactive"}
+          {data.active ? "On-going" : "Closed"}
         </span>
         <span className="text-sm text-gray-500 ml-2">
           Created: {data.dateCreated.toDateString()}
