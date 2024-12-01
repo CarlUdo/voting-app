@@ -1,8 +1,7 @@
-import { Db } from "@/db";
-import { choicesTable, issuesTable } from "./schema";
-import { NewIssue, newIssueSchema } from "./validation";
 import { v4 } from "uuid";
 import { eq } from "drizzle-orm";
+import { Db } from "@/db";
+import { choicesTable, issuesTable, type NewIssue, newIssueSchema } from ".";
 
 export const createService = (db: Db) => {
   return {
