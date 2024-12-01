@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import { Db } from "@/db";
 import {
-  NewRepresentative,
+  type NewRepresentative,
   newRepresentativeSchema,
   represenativesTable,
 } from ".";
