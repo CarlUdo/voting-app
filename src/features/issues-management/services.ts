@@ -29,6 +29,7 @@ export const createService = (db: Db) => {
           })),
         );
       }
+      return issueId;
     },
     updateActive: async (id: string, active: boolean) => {
       await db
