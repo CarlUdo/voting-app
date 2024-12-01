@@ -1,10 +1,9 @@
+import { and, desc, eq } from "drizzle-orm";
+import { v4 } from "uuid";
 import { Db } from "@/db";
 import { represenativesService } from "../representatives-management";
 import { issuesService } from "../issues-management";
-import { and, desc, eq } from "drizzle-orm";
-import { representativeVotesTable } from ".";
-import { newRepresentativeVoteSchema, type NewRepresentativeVote } from ".";
-import { v4 } from "uuid";
+import { newRepresentativeVoteSchema, type NewRepresentativeVote, representativeVotesTable } from ".";
 
 export const createService = (db: Db) => {
   return {
