@@ -12,6 +12,17 @@ import { represenativesService } from "../representatives-management";
 export const createService = (db: Db) => {
   return {
     getAllPublicVoters: async () => await db.select().from(publicVotersTable),
+    addPublicVoter: async (voter: { id: string; name: string; email: string; }) => {
+      const [newVoter] = await db
+        .insert(publicVotersTable)
+        .values({
+          id: voter.id,
+          name: voter.name,
+          email: voter.email,
+        })
+        .returning();
+      return newVoter;
+    },
     getLatestVoteByPublicVoter: async (publicVoterId: string) => {
       const votes = await db
         .select()
