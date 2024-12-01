@@ -1,7 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { representativesVotingService } from ".";
+import { representativesVotingService } from "./instance";
+
 
 export const addRepresentativeVoteAction = async (formData: FormData) => {
   const representativeId = formData.get("representativeId") as string;

@@ -1,5 +1,7 @@
-import { Representative } from ".";
-import { represenativesService } from "..";
+
+import { represenativesService } from "../instance";
+import { Representative } from "./representative";
+
 
 export async function RepresentativesBoard() {
   const representatives = await represenativesService.getAll();

@@ -1,7 +1,9 @@
 import { Suspense } from "react";
 import { Heading } from "@/ui";
-import { RepresentativesVotingSelector, IssuesBoard } from ".";
-import { representativesVotingService } from "..";
+
+import { representativesVotingService } from "../instance";
+import { RepresentativesVotingSelector } from "./representatives-voting-selector";
+import { IssuesBoard } from "./issues-board";
 
 type Props = {
   searchParams: { representativeId?: string };
@@ -9,7 +11,7 @@ type Props = {
 
 export async function RepresenativesVotingPage({ searchParams }: Props) {
   const representatives =
-    await representativesVotingService.getAllRepresentatives();
+    await representativesVotingService .getAllRepresentatives();
   const selectedRepId = searchParams.representativeId;
 
   return (
