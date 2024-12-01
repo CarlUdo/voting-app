@@ -1,8 +1,7 @@
 "use client";
-
-import { IssueType } from "@/features/issues-management";
 import { useState } from "react";
-import { addRepresentativeVoteAction } from "../actions";
+import { IssueType } from "@/features/issues-management";
+import { addRepresentativeVoteAction } from "../actions"; // App crashes if Iimport from ".." - why?
 
 type Props = {
   issue: IssueType;
