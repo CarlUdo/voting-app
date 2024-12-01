@@ -30,7 +30,9 @@ export function IssuesVoteCard({
       <div className="flex flex-col gap-6">
         <header className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">{issue.name}</h2>
-          <span className="badge badge-success px-3 py-1 text-white text-xs rounded-full">Active</span>
+          <span className="badge badge-success px-3 py-1 text-white text-xs rounded-full">
+            Active
+          </span>
         </header>
         <section className="flex flex-col gap-4">
           <h3 className="text-lg font-semibold text-gray-700">Choices:</h3>

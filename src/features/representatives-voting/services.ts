@@ -3,7 +3,11 @@ import { v4 } from "uuid";
 import { Db } from "@/db";
 import { represenativesService } from "../representatives-management";
 import { issuesService } from "../issues-management";
-import { newRepresentativeVoteSchema, type NewRepresentativeVote, representativeVotesTable } from ".";
+import {
+  newRepresentativeVoteSchema,
+  type NewRepresentativeVote,
+  representativeVotesTable,
+} from ".";
 
 export const createService = (db: Db) => {
   return {
