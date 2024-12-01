@@ -1,4 +1,4 @@
-import { RepresenativesVotingPage } from "@/features/representatives-voting/ui";
+import { RepresenativesVotingPage } from "@/features/representatives-voting";
 
 type Props = {
   searchParams: { representativeId?: string };
