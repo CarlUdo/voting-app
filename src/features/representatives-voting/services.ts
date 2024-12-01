@@ -40,5 +40,6 @@ export const createService = (db: Db) => {
         .insert(representativeVotesTable)
         .values({ id: v4(), ...vote, dateCreated: new Date() });
     },
+    deleteTable: async () => await db.delete(representativeVotesTable),
   };
 };
