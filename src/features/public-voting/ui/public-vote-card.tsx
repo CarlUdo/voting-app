@@ -15,29 +15,32 @@ export function PublicVoteCard({
 }: Props) {
   return (
     <article
-      className={clsx("card shadow-md p-4 bg-white rounded-lg border", {
-        "border-blue-500 border-2": isCurrentVote,
-        "border-gray-200": !isCurrentVote,
-      })}
+      className={clsx(
+        "card shadow-lg p-6 bg-white rounded-xl border transition duration-300 transform hover:scale-105",
+        {
+          "border-blue-500 border-2": isCurrentVote,
+          "border-gray-200": !isCurrentVote,
+        }
+      )}
     >
-      <div>
-        <div className="flex flex-col gap-4">
-          <header className="flex justify-between items-start">
-            <div>
-              <h2 className="text-xl font-semibold">{representative.name}</h2>
-              <p className="text-sm text-gray-500">{representative.email}</p>
-            </div>
-            {isCurrentVote && (
-              <span className="badge badge-primary">Current Vote</span>
-            )}
-          </header>
-          <footer>
-            <VoteForm
-              publicVoterId={publicVoterId}
-              representativeId={representative.id}
-            />
-          </footer>
-        </div>
+      <div className="flex flex-col gap-4">
+        <header className="flex justify-between items-start mb-4">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-800">{representative.name}</h2>
+            <p className="text-sm text-gray-500">{representative.email}</p>
+          </div>
+          {isCurrentVote && (
+            <span className="badge badge-primary px-4 py-3 text-sm rounded-full text-white">
+              Current Vote
+            </span>
+          )}
+        </header>
+        <footer className="mt-4">
+          <VoteForm
+            publicVoterId={publicVoterId}
+            representativeId={representative.id}
+          />
+        </footer>
       </div>
     </article>
   );
