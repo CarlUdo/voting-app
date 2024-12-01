@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import { IssueType } from "@/features/issues-management";
+
 import { addRepresentativeVoteAction } from "../actions"; // App crashes if I import from ".." - why?
+import type { IssueType } from "@/libs";
 
 type Props = {
   issue: IssueType;

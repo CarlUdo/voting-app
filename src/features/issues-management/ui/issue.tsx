@@ -1,5 +1,6 @@
+import type { IssueType } from "@/libs";
 import { DeactivateButton } from "./deactivate-button"; // App crashes if I import from "." Why??
-import { IssueType } from "..";
+
 
 export function Issue({ data }: { data: IssueType }) {
   return (
