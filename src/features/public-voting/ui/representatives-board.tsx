@@ -14,7 +14,7 @@ export async function RepresentativesBoard({
   return (
     <section className="p-6 bg-gray-100 rounded-lg shadow-lg">
       <header className="text-center mb-6">
-        <h2 className="text-3xl font-bold text-blue-600">Representatives</h2>
+        <h2 className="text-3xl font-bold text-blue-600">Representatives to vote for</h2>
       </header>
       {!publicVoterId ? (
         <p className="text-center text-gray-500 text-lg mt-4">Please select a voter first</p>
