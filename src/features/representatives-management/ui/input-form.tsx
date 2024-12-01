@@ -2,11 +2,11 @@ import { addRepresentativeAction } from "../actions";
 
 export function InputForm() {
   return (
-    <form className="flex flex-col gap-6" action={addRepresentativeAction}>
-      <fieldset className="flex flex-col gap-4">
+    <form className="flex flex-col" action={addRepresentativeAction}>
+      <fieldset className="flex flex-col">
         <legend className="sr-only">Representative Details</legend>
         <div className="flex items-center gap-4">
-          <label className="flex items-center gap-2 mr-4">
+          <label className="input input-bordered flex items-center gap-2 mr-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -19,11 +19,11 @@ export function InputForm() {
               required
               name="name"
               type="text"
-              className="input input-bordered grow"
+              className="grow"
               placeholder="Representative name"
             />
           </label>
-          <label className="flex items-center gap-2 mr-4">
+          <label className="input input-bordered flex items-center gap-2 mr-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -37,7 +37,7 @@ export function InputForm() {
               required
               name="email"
               type="text"
-              className="input input-bordered grow"
+              className="grow"
               placeholder="Email"
             />
           </label>
