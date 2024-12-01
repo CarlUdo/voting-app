@@ -1,10 +1,8 @@
-import { represenativesTable } from "@/features/representatives-management/schema";
-import { db } from ".";
+import { represenativesService } from "@/features/representatives-management/instance";
 import { getPeople } from "./seed-helpers";
-import { publicVotersTable, publicVotingService } from "@/features/public-voting";
-import { represenativesService } from "@/features/representatives-management";
-import { issuesService } from "@/features/issues-management";
-import { representativesVotingService } from "@/features/representatives-voting";
+import { issuesService } from "@/features/issues-management/instance";
+import { publicVotingService } from "@/features/public-voting/instance";
+import { representativesVotingService } from "@/features/representatives-voting/instance";
 
 const TOTAL_NUMBER_OF_PEOPLE = 100;
 const NUMBER_OF_REPRESENTATIVES = 10;
@@ -21,12 +19,12 @@ const seed = async () => {
     await representativesVotingService.deleteTable();
     
     
-    await db
-      .insert(represenativesTable)
-      .values(people.slice(0, NUMBER_OF_REPRESENTATIVES));
+    // await db
+    //   .insert(represenativesTable)
+    //   .values(people.slice(0, NUMBER_OF_REPRESENTATIVES));
 
-    await db.delete(publicVotersTable);
-    await db.insert(publicVotersTable).values(people);
+    // await db.delete(publicVotersTable);
+    // await db.insert(publicVotersTable).values(people);
     console.log("Seedning done");
   } catch (error) {
     console.log(`Error seeding representatives`, error);
