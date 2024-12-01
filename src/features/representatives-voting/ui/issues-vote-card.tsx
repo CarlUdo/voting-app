@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { IssueType } from "@/features/issues-management";
-import { addRepresentativeVoteAction } from "../actions"; // App crashes if Iimport from ".." - why?
+import { addRepresentativeVoteAction } from "../actions"; // App crashes if I import from ".." - why?
 
 type Props = {
   issue: IssueType;
@@ -26,28 +26,28 @@ export function IssuesVoteCard({
   };
 
   return (
-    <article className="card shadow-md p-4 bg-white rounded-lg border border-gray-200">
-      <div className="flex flex-col gap-4">
-        <header>
-          <h2 className="text-xl font-semibold">{issue.name}</h2>
-          <span className="badge badge-success">Active</span>
+    <article className="card shadow-lg p-6 bg-white rounded-xl border transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+      <div className="flex flex-col gap-6">
+        <header className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold text-gray-800">{issue.name}</h2>
+          <span className="badge badge-success px-3 py-1 text-white text-xs rounded-full">Active</span>
         </header>
-        <section className="flex flex-col gap-2">
-          <h3 className="font-semibold">Choices:</h3>
+        <section className="flex flex-col gap-4">
+          <h3 className="text-lg font-semibold text-gray-700">Choices:</h3>
           <div className="flex flex-col gap-2">
             {issue.choices.map((choice) => (
-              <label key={choice.id}>
+              <label key={choice.id} className="flex items-center gap-2">
                 <input
                   type="radio"
                   name={`choice-${issue.id}`}
                   value={choice.id}
-                  className="radio radio-primary mr-2"
+                  className="radio radio-primary"
                   checked={selectedChoiceId === choice.id}
                   onChange={(e) => setSelectedChoiceId(e.target.value)}
                 />
-                <span>{choice.name}</span>
+                <span className="text-gray-700">{choice.name}</span>
                 {currentVoteChoiceId === choice.id && (
-                  <span className="ml-auto badge badge-success">
+                  <span className="ml-auto badge badge-success px-2 py-1 text-xs rounded-full">
                     Current Vote
                   </span>
                 )}
@@ -55,11 +55,11 @@ export function IssuesVoteCard({
             ))}
           </div>
         </section>
-        <footer>
+        <footer className="mt-4">
           <button
             onClick={handleVote}
             disabled={!selectedChoiceId}
-            className="btn btn-primary w-full"
+            className={`btn btn-primary w-full ${!selectedChoiceId ? "opacity-50 cursor-not-allowed" : ""}`}
           >
             Vote
           </button>
