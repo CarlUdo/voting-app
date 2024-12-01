@@ -7,7 +7,7 @@ export async function RepresentativesBoard() {
     <section className="p-6 bg-gray-100 rounded-lg shadow-lg mt-6">
       <header>
         <h2 className="text-3xl font-bold mb-6 text-center text-blue-600">
-          Representatives
+          Choosen representatives
         </h2>
       </header>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
