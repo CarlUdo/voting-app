@@ -1,7 +1,7 @@
+import { Suspense } from "react";
 import { Heading } from "@/ui";
 import { PublicVotingSelector, RepresentativesBoard } from ".";
-import { publicVotingService } from "../instance";
-import { Suspense } from "react";
+import { publicVotingService } from "..";
 
 type Props = {
   searchParams: { voterId?: string };

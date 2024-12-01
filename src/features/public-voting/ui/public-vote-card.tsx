@@ -1,6 +1,6 @@
 import { RepresentativeType } from "@/libs";
 import clsx from "clsx";
-import { VoteForm } from "./vote-form";
+import { VoteForm } from "./vote-form"; // App crashes if I import from "." - why?
 
 type Props = {
   representative: RepresentativeType;

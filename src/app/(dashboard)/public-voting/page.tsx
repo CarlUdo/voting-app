@@ -1,4 +1,4 @@
-import { PublicVotingPage } from "@/features/public-voting/ui";
+import { PublicVotingPage } from "@/features/public-voting";
 
 type Props = {
   searchParams: { voterId?: string };

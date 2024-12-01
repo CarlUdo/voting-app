@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { publicVotingService } from "./instance";
+import { publicVotingService } from ".";
 
 export const addPublicVoteAction = async (formData: FormData) => {
   const publicVoterId = formData.get("publicVoterId") as string;

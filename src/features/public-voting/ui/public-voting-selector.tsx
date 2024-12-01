@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import type { PublicVoter } from "../validation";
+import type { PublicVoter } from "..";
 
 type Props = {
   publicVoters: PublicVoter[];
