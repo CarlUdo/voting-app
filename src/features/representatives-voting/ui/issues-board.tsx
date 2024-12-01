@@ -23,7 +23,7 @@ export async function IssuesBoard({ selectedRepId }: Props) {
     <section className="p-6 bg-gray-100 rounded-lg shadow-lg">
       <header className="text-center mb-6">
         <h2 className="text-3xl font-bold text-blue-600">
-          Active Issues to vote for
+          On-going Issues to vote for
         </h2>
       </header>
       {!selectedRepId ? (
@@ -32,7 +32,7 @@ export async function IssuesBoard({ selectedRepId }: Props) {
         </p>
       ) : issues.length === 0 ? (
         <p className="text-center text-gray-500 text-lg mt-4">
-          No active issues found
+          No on-going issues found
         </p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
