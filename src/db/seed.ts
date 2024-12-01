@@ -19,12 +19,20 @@ const seed = async () => {
     await publicVotingService.deleteTables();
     await representativesVotingService.deleteTable();
 
-    console.log("Adding people...");
+    console.log("Adding representatives...");
     const createdReps = await Promise.all(
       representatives.map(async (rep) => {
         return await represenativesService.add(rep);
       })
     );
+
+    console.log("Adding public voters...");
+    const createdVoters = await Promise.all(
+      allPeople.map(async (voter) => {
+        return await publicVotingService.addPublicVoter(voter);
+      })
+    );
+
 
 
 
