@@ -1,5 +1,7 @@
 import { RepresentativeType } from "@/libs";
 import { faker } from "@faker-js/faker";
+import { subYears } from "date-fns";
+
 
 export const getPeople = (numberOfPeople: number): RepresentativeType[] => {
   const people = [];
@@ -57,3 +59,11 @@ export const ISSUES_DATA = [
     choices: ["Monthly team events", "Quarterly celebrations", "Annual gatherings"],
   },
 ];
+
+export const generateDateInPast = (yearsAgo = 4) => {
+  const start = subYears(new Date(), yearsAgo);
+  const end = new Date();
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+};
