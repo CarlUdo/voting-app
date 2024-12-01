@@ -31,7 +31,7 @@ export function IssuesVoteCard({
       <div className="flex flex-col gap-6">
         <header className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">{issue.name}</h2>
-          <span className="badge badge-success px-4 py-2 text-white text-xs rounded-full">
+          <span className="badge badge-success px-3 py-2 text-white text-xs rounded-full">
             On-going
           </span>
         </header>
