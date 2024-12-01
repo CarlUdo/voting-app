@@ -53,5 +53,23 @@ export const createService = (db: Db) => {
       await db.delete(issuesTable);
       await db.delete(choicesTable);
     },
+    getById: async (id: string) => {
+      const [issue] = await db
+        .select()
+        .from(issuesTable)
+        .where(eq(issuesTable.id, id));
+
+      if (!issue) return null;
+
+      const choices = await db
+        .select()
+        .from(choicesTable)
+        .where(eq(choicesTable.issueId, id));
+
+      return {
+        ...issue,
+        choices,
+      };
+    },
   };
 };
