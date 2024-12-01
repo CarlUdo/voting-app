@@ -23,10 +23,6 @@ const links = [
     href: "/representatives-voting",
   },
   {
-    name: "Stats",
-    href: "/stats",
-  },
-  {
     name: "Logout",
     href: "/",
   },
