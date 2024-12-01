@@ -10,9 +10,7 @@ export function RepresenativesPage() {
       <section>
         <InputForm />
       </section>
-      <section>
-        <RepresentativesBoard />
-      </section>
+      <RepresentativesBoard />
     </main>
   );
 }
