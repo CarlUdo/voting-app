@@ -16,7 +16,7 @@ export function DeactivateButton({ id, active }: Props) {
 
   return (
     <button onClick={deactivate} className="btn btn-sm btn-error">
-      Deactivate
+      Close issue
     </button>
   );
 }
