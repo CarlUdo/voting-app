@@ -6,8 +6,6 @@ type Props = {
 };
 
 export async function IssuesBoard({ selectedRepId }: Props) {
-  const representatives =
-    await representativesVotingService.getAllRepresentatives();
   const issues = await representativesVotingService.getActiveIssues();
 
   const currentVotes = selectedRepId
