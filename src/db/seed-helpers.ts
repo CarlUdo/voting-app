@@ -1,6 +1,5 @@
 import { RepresentativeType } from "@/libs";
 import { faker } from "@faker-js/faker";
-//import { subYears } from "date-fns";
 
 export const getPeople = (numberOfPeople: number): RepresentativeType[] => {
   const people = [];
