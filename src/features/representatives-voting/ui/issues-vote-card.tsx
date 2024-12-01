@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { addRepresentativeVoteAction } from "../actions"; // App crashes if I import from ".." - why?
+import { addRepresentativeVoteAction } from "../actions";
 import type { IssueType } from "@/libs";
 
 type Props = {
@@ -27,11 +27,11 @@ export function IssuesVoteCard({
   };
 
   return (
-    <article className="card shadow-lg p-6 bg-white rounded-xl border transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+    <article className="card shadow-lg p-4 bg-white rounded-xl border transition duration-300 transform hover:scale-105 hover:shadow-2xl w-full max-w-xl">
       <div className="flex flex-col gap-6">
         <header className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">{issue.name}</h2>
-          <span className="badge badge-success px-3 py-1 text-white text-xs rounded-full">
+          <span className="badge badge-success px-4 py-2 text-white text-xs rounded-full">
             On-going
           </span>
         </header>
@@ -50,7 +50,7 @@ export function IssuesVoteCard({
                 />
                 <span className="text-gray-700">{choice.name}</span>
                 {currentVoteChoiceId === choice.id && (
-                  <span className="ml-auto badge badge-success px-2 py-1 text-xs rounded-full">
+                  <span className="ml-auto badge badge-success px-3 py-2 text-xs rounded-full">
                     Current Vote
                   </span>
                 )}
