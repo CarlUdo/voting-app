@@ -2,8 +2,9 @@ import { RepresentativeType } from "@/libs";
 
 export function Representative({ data }: { data: RepresentativeType }) {
   return (
-    <div className="card shadow-md px-2 py-1 bg-white rounded-lg border border-gray-200 min-w-80 max-w-fit">
-      <h2 className="text-lg font-semibold">{data.name}</h2>
+    <div className="card shadow-lg px-4 py-3 bg-white rounded-xl border border-gray-200">
+      <h2 className="text-xl font-semibold mb-2 text-gray-800">{data.name}</h2>
+      <h3 className="text-sm font-medium text-gray-500">{data.email}</h3>
     </div>
   );
 }
