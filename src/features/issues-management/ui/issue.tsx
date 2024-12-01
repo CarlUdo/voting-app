@@ -19,7 +19,9 @@ export function Issue({ data }: { data: IssueType }) {
       </div>
       <section className="">
         <DeactivateButton id={data.id} active={data.active} />
-        <h3 className="font-semibold mb-2 mt-4 text-lg text-gray-700">Choices:</h3>
+        <h3 className="font-semibold mb-2 mt-4 text-lg text-gray-700">
+          Choices:
+        </h3>
         <ul className="list-disc list-inside text-gray-600 pl-4">
           {data.choices.map((choice) => (
             <li key={choice.id} className="mb-1">
