@@ -10,9 +10,7 @@ export function IssuesPage() {
       <section>
         <InputForm />
       </section>
-      <section>
-        <IssuesBoard />
-      </section>
+      <IssuesBoard />
     </main>
   );
 }
