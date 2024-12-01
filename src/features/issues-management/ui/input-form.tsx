@@ -33,9 +33,14 @@ export function InputForm() {
   const validChoices = choices.filter((choice) => choice.trim() !== "");
 
   return (
-    <form className="flex flex-col gap-6 p-6 bg-white shadow-md rounded-lg" action={handleSubmit}>
+    <form
+      className="flex flex-col gap-6 p-6 bg-white shadow-md rounded-lg"
+      action={handleSubmit}
+    >
       <fieldset className="flex flex-col gap-6">
-        <legend className="text-2xl font-bold text-center text-blue-600 mb-4">New Issue</legend>
+        <legend className="text-2xl font-bold text-center text-blue-600 mb-4">
+          New Issue
+        </legend>
         <div className="flex items-center gap-4">
           <label htmlFor="name" className="sr-only">
             Issue Name

@@ -1,6 +1,6 @@
 import { RepresentativeType } from "@/libs";
 
-type Props = { 
+type Props = {
   data: RepresentativeType;
 };
 

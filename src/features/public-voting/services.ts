@@ -1,7 +1,12 @@
 import { desc, eq } from "drizzle-orm";
 import { v4 } from "uuid";
 import { Db } from "@/db";
-import { publicVotersTable, publicVotesTable, type NewPublicVote, newPublicVoteSchema } from ".";
+import {
+  publicVotersTable,
+  publicVotesTable,
+  type NewPublicVote,
+  newPublicVoteSchema,
+} from ".";
 import { represenativesService } from "../representatives-management";
 
 export const createService = (db: Db) => {

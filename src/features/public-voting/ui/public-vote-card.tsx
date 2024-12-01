@@ -20,13 +20,15 @@ export function PublicVoteCard({
         {
           "border-blue-500 border-2": isCurrentVote,
           "border-gray-200": !isCurrentVote,
-        }
+        },
       )}
     >
       <div className="flex flex-col gap-4">
         <header className="flex justify-between items-start mb-4">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">{representative.name}</h2>
+            <h2 className="text-2xl font-bold text-gray-800">
+              {representative.name}
+            </h2>
             <p className="text-sm text-gray-500">{representative.email}</p>
           </div>
           {isCurrentVote && (

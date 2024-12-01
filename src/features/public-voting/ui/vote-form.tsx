@@ -8,7 +8,11 @@ type Props = {
   isCurrentVote: boolean;
 };
 
-export function VoteForm({ publicVoterId, representativeId, isCurrentVote }: Props) {
+export function VoteForm({
+  publicVoterId,
+  representativeId,
+  isCurrentVote,
+}: Props) {
   const handleVote = async () => {
     const formData = new FormData();
     formData.append("publicVoterId", publicVoterId);
@@ -20,7 +24,11 @@ export function VoteForm({ publicVoterId, representativeId, isCurrentVote }: Pro
     <form action={handleVote}>
       <input type="hidden" name="publicVoterId" value={publicVoterId} />
       <input type="hidden" name="representativeId" value={representativeId} />
-      <button disabled={isCurrentVote} type="submit" className="btn btn-primary">
+      <button
+        disabled={isCurrentVote}
+        type="submit"
+        className="btn btn-primary"
+      >
         Vote for this representative
       </button>
     </form>
