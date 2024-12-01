@@ -1,5 +1,5 @@
 import { represenativesService } from "@/features/representatives-management/instance";
-import { getPeople } from "./seed-helpers";
+import { generateDateInPast, getPeople, ISSUES_DATA } from "./seed-helpers";
 import { issuesService } from "@/features/issues-management/instance";
 import { publicVotingService } from "@/features/public-voting/instance";
 import { representativesVotingService } from "@/features/representatives-voting/instance";
@@ -20,7 +20,7 @@ const seed = async () => {
     await representativesVotingService.deleteTable();
 
     console.log("Adding representatives...");
-    const createdReps = await Promise.all(
+    const createdRepresentatives = await Promise.all(
       representatives.map(async (rep) => {
         return await represenativesService.add(rep);
       })
@@ -32,6 +32,20 @@ const seed = async () => {
         return await publicVotingService.addPublicVoter(voter);
       })
     );
+  
+    console.log("Creating issues...");
+    const createdIssues = [];
+    for (const issueData of ISSUES_DATA) {
+      const issueId = await issuesService.add({
+        name: issueData.name,
+        choices: issueData.choices.map(name => ({ name })),
+      });
+
+      const issue = await issuesService.getById(issueId);
+      if (issue) {
+        createdIssues.push(issue);
+      }
+    }
 
 
 
@@ -42,7 +56,7 @@ const seed = async () => {
 
     // await db.delete(publicVotersTable);
     // await db.insert(publicVotersTable).values(people);
-    console.log("Seedning done");
+    console.log("Seed completed successfully!");
   } catch (error) {
     console.log(`Error seeding representatives`, error);
   }
