@@ -4,6 +4,7 @@ import { getPeople } from "./seed-helpers";
 import { publicVotersTable, publicVotingService } from "@/features/public-voting";
 import { represenativesService } from "@/features/representatives-management";
 import { issuesService } from "@/features/issues-management";
+import { representativesVotingService } from "@/features/representatives-voting";
 
 const TOTAL_NUMBER_OF_PEOPLE = 100;
 const NUMBER_OF_REPRESENTATIVES = 10;
@@ -17,6 +18,7 @@ const seed = async () => {
     await represenativesService.deleteTable();
     await issuesService.deleteTables();
     await publicVotingService.deleteTables();
+    await representativesVotingService.deleteTable();
     
     
     await db
