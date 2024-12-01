@@ -20,14 +20,14 @@ const seed = async () => {
     await representativesVotingService.deleteTable();
 
     console.log("Adding representatives...");
-    const createdRepresentatives = await Promise.all(
+    await Promise.all(
       representatives.map(async (rep) => {
         return await represenativesService.add(rep);
       })
     );
 
     console.log("Adding public voters...");
-    const createdVoters = await Promise.all(
+    await Promise.all(
       allPeople.map(async (voter) => {
         return await publicVotingService.addPublicVoter(voter);
       })
@@ -47,15 +47,6 @@ const seed = async () => {
       }
     }
 
-
-
-
-    // await db
-    //   .insert(represenativesTable)
-    //   .values(people.slice(0, NUMBER_OF_REPRESENTATIVES));
-
-    // await db.delete(publicVotersTable);
-    // await db.insert(publicVotersTable).values(people);
     console.log("Seed completed successfully!");
   } catch (error) {
     console.log(`Error seeding representatives`, error);
