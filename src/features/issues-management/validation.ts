@@ -28,6 +28,5 @@ export const issueSchema = idSchema.merge(
 );
 
 export type NewIssue = z.infer<typeof newIssueSchema>;
-export type IssueType = z.infer<typeof issueSchema>;
 export type NewChoice = z.infer<typeof newChoiceSchema>;
 export type Choice = z.infer<typeof choiceSchema>;
