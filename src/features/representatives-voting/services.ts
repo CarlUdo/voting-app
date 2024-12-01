@@ -1,7 +1,10 @@
 import { Db } from "@/db";
 import { represenativesService } from "../representatives-management";
 import { issuesService } from "../issues-management";
-import { newRepresentativeVoteSchema, type NewRepresentativeVote } from "./validation";
+import {
+  newRepresentativeVoteSchema,
+  type NewRepresentativeVote,
+} from "./validation";
 import { representativeVotesTable } from "./schema";
 import { and, desc, eq } from "drizzle-orm";
 import { v4 } from "uuid";
@@ -10,7 +13,10 @@ export const createService = (db: Db) => {
   return {
     getAllRepresentatives: async () => await represenativesService.getAll(),
     getActiveIssues: async () => await issuesService.getActiveIssues(),
-    getLatestVoteByRepresentativeAndIssue: async (representativeId: string, issueId: string) => {
+    getLatestVoteByRepresentativeAndIssue: async (
+      representativeId: string,
+      issueId: string,
+    ) => {
       const votes = await db
         .select()
         .from(representativeVotesTable)
@@ -18,7 +24,7 @@ export const createService = (db: Db) => {
           and(
             eq(representativeVotesTable.representativeId, representativeId),
             eq(representativeVotesTable.issueId, issueId),
-          )
+          ),
         )
         .orderBy(desc(representativeVotesTable.dateCreated))
         .limit(1);

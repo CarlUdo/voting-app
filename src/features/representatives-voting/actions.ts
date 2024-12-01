@@ -3,7 +3,6 @@
 import { revalidatePath } from "next/cache";
 import { representativesVotingService } from "./instance";
 
-
 export const addRepresentativeVoteAction = async (formData: FormData) => {
   const representativeId = formData.get("representativeId") as string;
   const issueId = formData.get("issueId") as string;

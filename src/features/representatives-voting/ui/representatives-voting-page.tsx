@@ -11,7 +11,7 @@ type Props = {
 
 export async function RepresenativesVotingPage({ searchParams }: Props) {
   const representatives =
-    await representativesVotingService .getAllRepresentatives();
+    await representativesVotingService.getAllRepresentatives();
   const selectedRepId = searchParams.representativeId;
 
   return (

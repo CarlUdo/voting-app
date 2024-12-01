@@ -1,7 +1,6 @@
 import type { IssueType } from "@/libs";
 import { DeactivateButton } from "./deactivate-button"; // App crashes if I import from "." Why??
 
-
 export function Issue({ data }: { data: IssueType }) {
   return (
     <article className="card shadow-lg p-6 bg-white rounded-xl border border-gray-200 transform transition duration-300 hover:shadow-2xl hover:scale-105">

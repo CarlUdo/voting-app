@@ -32,6 +32,6 @@ export const createService = (db: Db) => {
     deleteTables: async () => {
       await db.delete(publicVotersTable);
       await db.delete(publicVotesTable);
-    }
+    },
   };
 };

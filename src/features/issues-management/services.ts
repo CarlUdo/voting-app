@@ -52,6 +52,6 @@ export const createService = (db: Db) => {
     deleteTables: async () => {
       await db.delete(issuesTable);
       await db.delete(choicesTable);
-    }
+    },
   };
 };
