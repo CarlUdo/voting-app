@@ -1,5 +1,5 @@
-import { issuesService } from "../instance";
 import { Issue } from ".";
+import { issuesService } from "..";
 
 export async function IssuesBoard() {
   const issues = await issuesService.getAll();
