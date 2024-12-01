@@ -39,6 +39,7 @@ export function PublicVoteCard({
           <VoteForm
             publicVoterId={publicVoterId}
             representativeId={representative.id}
+            isCurrentVote={isCurrentVote}
           />
         </footer>
       </div>
