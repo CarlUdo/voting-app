@@ -9,7 +9,8 @@ const NUMBER_OF_REPRESENTATIVES = 10;
 
 const seed = async () => {
   console.log("Starting seed process...");
-  const people = getPeople(TOTAL_NUMBER_OF_PEOPLE);
+  const allPeople = getPeople(TOTAL_NUMBER_OF_PEOPLE);
+  const representatives = allPeople.slice(0, NUMBER_OF_REPRESENTATIVES);
 
   try {
     console.log("Clearing existing data...");
@@ -17,8 +18,16 @@ const seed = async () => {
     await issuesService.deleteTables();
     await publicVotingService.deleteTables();
     await representativesVotingService.deleteTable();
-    
-    
+
+    console.log("Adding people...");
+    const createdReps = await Promise.all(
+      representatives.map(async (rep) => {
+        return await represenativesService.add(rep);
+      })
+    );
+
+
+
     // await db
     //   .insert(represenativesTable)
     //   .values(people.slice(0, NUMBER_OF_REPRESENTATIVES));
