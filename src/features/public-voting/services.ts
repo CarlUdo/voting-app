@@ -12,7 +12,11 @@ import { represenativesService } from "../representatives-management";
 export const createService = (db: Db) => {
   return {
     getAllPublicVoters: async () => await db.select().from(publicVotersTable),
-    addPublicVoter: async (voter: { id: string; name: string; email: string; }) => {
+    addPublicVoter: async (voter: {
+      id: string;
+      name: string;
+      email: string;
+    }) => {
       const [newVoter] = await db
         .insert(publicVotersTable)
         .values({

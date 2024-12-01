@@ -23,22 +23,22 @@ const seed = async () => {
     await Promise.all(
       representatives.map(async (rep) => {
         return await represenativesService.add(rep);
-      })
+      }),
     );
 
     console.log("Adding public voters...");
     await Promise.all(
       allPeople.map(async (voter) => {
         return await publicVotingService.addPublicVoter(voter);
-      })
+      }),
     );
-  
+
     console.log("Creating issues...");
     const createdIssues = [];
     for (const issueData of ISSUES_DATA) {
       const issueId = await issuesService.add({
         name: issueData.name,
-        choices: issueData.choices.map(name => ({ name })),
+        choices: issueData.choices.map((name) => ({ name })),
       });
 
       const issue = await issuesService.getById(issueId);

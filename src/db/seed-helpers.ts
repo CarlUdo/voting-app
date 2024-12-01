@@ -2,7 +2,6 @@ import { RepresentativeType } from "@/libs";
 import { faker } from "@faker-js/faker";
 //import { subYears } from "date-fns";
 
-
 export const getPeople = (numberOfPeople: number): RepresentativeType[] => {
   const people = [];
 
@@ -20,7 +19,11 @@ export const getPeople = (numberOfPeople: number): RepresentativeType[] => {
 export const ISSUES_DATA = [
   {
     name: "Office Location Change",
-    choices: ["Stay in current location", "Move to city center", "Move to suburbs"],
+    choices: [
+      "Stay in current location",
+      "Move to city center",
+      "Move to suburbs",
+    ],
   },
   {
     name: "Work From Home Policy",
@@ -32,11 +35,19 @@ export const ISSUES_DATA = [
   },
   {
     name: "Environmental Initiative",
-    choices: ["Solar panel installation", "Waste reduction program", "Green commute incentives"],
+    choices: [
+      "Solar panel installation",
+      "Waste reduction program",
+      "Green commute incentives",
+    ],
   },
   {
     name: "Technology Stack Update",
-    choices: ["Stay with current stack", "Gradual migration", "Complete overhaul"],
+    choices: [
+      "Stay with current stack",
+      "Gradual migration",
+      "Complete overhaul",
+    ],
   },
   {
     name: "Office Pet Policy",
@@ -44,7 +55,11 @@ export const ISSUES_DATA = [
   },
   {
     name: "Learning Budget",
-    choices: ["Individual allocation", "Team-based pool", "Project-based funding"],
+    choices: [
+      "Individual allocation",
+      "Team-based pool",
+      "Project-based funding",
+    ],
   },
   {
     name: "Meeting Culture",
@@ -56,7 +71,11 @@ export const ISSUES_DATA = [
   },
   {
     name: "Company Events",
-    choices: ["Monthly team events", "Quarterly celebrations", "Annual gatherings"],
+    choices: [
+      "Monthly team events",
+      "Quarterly celebrations",
+      "Annual gatherings",
+    ],
   },
 ];
 
