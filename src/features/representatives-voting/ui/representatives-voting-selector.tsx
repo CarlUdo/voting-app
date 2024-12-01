@@ -1,7 +1,7 @@
 "use client";
 
-import { RepresentativeType } from "@/libs";
 import { useRouter, useSearchParams } from "next/navigation";
+import { RepresentativeType } from "@/libs";
 
 type Props = {
   representatives: RepresentativeType[];
