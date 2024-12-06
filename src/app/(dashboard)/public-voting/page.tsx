@@ -1,4 +1,4 @@
-import { PublicVotingPage } from "@/features/public-voting";
+import { PublicVotingPage } from "@/features";
 
 type Props = {
   searchParams: Promise<{ voterId?: string }>;
