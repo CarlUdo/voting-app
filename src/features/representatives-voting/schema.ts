@@ -1,7 +1,7 @@
 import { pgTable, uuid as pgUuid, timestamp } from "drizzle-orm/pg-core";
 import { v4 } from "uuid";
 import { relations } from "drizzle-orm";
-import { represenativesTable } from "../representatives-management/schema"; // Can't generate drizzle tables if I import from "../representatives-management" - why??
+import { represenativesTable } from "../representatives/schema"; // Can't generate drizzle tables if I import from "../representatives-management" - why??
 import { choicesTable, issuesTable } from "../issues/schema"; // Can't generate drizzle tables if I import from "../representatives-management" - why??
 
 export const representativeVotesTable = pgTable("representative_votes", {

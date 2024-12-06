@@ -7,7 +7,7 @@ import {
   type NewPublicVote,
   newPublicVoteSchema,
 } from ".";
-import { represenativesService } from "../representatives-management";
+import { represenativesService } from "../representatives";
 
 export const createService = (db: Db) => {
   return {

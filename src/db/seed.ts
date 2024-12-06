@@ -1,4 +1,4 @@
-import { represenativesService } from "@/features/representatives-management/instance";
+import { represenativesService } from "@/features/representatives/instance";
 import { getPeople, ISSUES_DATA } from "./seed-helpers";
 import { issuesService } from "@/features/issues/instance";
 import { publicVotingService } from "@/features/public-voting/instance";

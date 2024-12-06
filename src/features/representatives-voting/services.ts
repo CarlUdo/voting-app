@@ -1,5 +1,5 @@
 import { Db } from "@/db";
-import { represenativesService } from "../representatives-management";
+import { represenativesService } from "../representatives";
 import { issuesService } from "../issues";
 import {
   newRepresentativeVoteSchema,
