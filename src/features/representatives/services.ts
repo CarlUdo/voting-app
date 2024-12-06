@@ -1,10 +1,7 @@
 import { v4 } from "uuid";
 import { Db } from "@/db";
-import {
-  type NewRepresentative,
-  newRepresentativeSchema,
-  represenativesTable,
-} from ".";
+import { type NewRepresentative, newRepresentativeSchema } from "./validation";
+import { represenativesTable } from "./schema";
 
 export const createService = (db: Db) => {
   return {
