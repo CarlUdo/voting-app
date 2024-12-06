@@ -1,7 +1,7 @@
 import { RepresenativesVotingPage } from "@/features/representatives-voting";
 
 type Props = {
-  searchParams: { representativeId?: string };
+  searchParams: Promise<{ representativeId?: string }>;
 };
 
 export default function Page({ searchParams }: Props) {

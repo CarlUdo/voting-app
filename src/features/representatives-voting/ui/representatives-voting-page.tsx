@@ -6,13 +6,13 @@ import { RepresentativesVotingSelector } from "./representatives-voting-selector
 import { IssuesBoard } from "./issues-board";
 
 type Props = {
-  searchParams: { representativeId?: string };
+  searchParams: Promise<{ representativeId?: string }>;
 };
 
 export async function RepresenativesVotingPage({ searchParams }: Props) {
   const representatives =
     await representativesVotingService.getAllRepresentatives();
-  const selectedRepId = searchParams.representativeId;
+  const selectedRepId = (await searchParams).representativeId;
 
   return (
     <main>
