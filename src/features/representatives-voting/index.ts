@@ -1,3 +1,2 @@
-export * from "./services";
+export * from "./instance";
 export * from "./ui";
-export * from "./validation";
