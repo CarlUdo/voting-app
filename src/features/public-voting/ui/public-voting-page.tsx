@@ -17,9 +17,9 @@ export async function PublicVotingPage({ searchParams }: Props) {
 
   return (
     <main>
-      <header>
+
         <Heading title="Vote for your representative" />
-      </header>
+
       <section className="p-4">
         <PublicVotingSelector publicVoters={publicVoters} />
         <Suspense fallback={<div>Loading...</div>}>
