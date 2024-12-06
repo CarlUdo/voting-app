@@ -1,1 +1,1 @@
-export * from "./issues-management";
+export * from "./issues";
