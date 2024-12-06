@@ -1,8 +1,5 @@
-import { represenativesService } from "@/features/representatives/instance";
+import { represenativesService, issuesService, publicVotingService, representativesVotingService } from "@/features";
 import { getPeople, ISSUES_DATA } from "./seed-helpers";
-import { issuesService } from "@/features/issues/instance";
-import { publicVotingService } from "@/features/public-voting/instance";
-import { representativesVotingService } from "@/features/representatives-voting/instance";
 
 const TOTAL_NUMBER_OF_PEOPLE = 100;
 const NUMBER_OF_REPRESENTATIVES = 10;
