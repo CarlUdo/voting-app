@@ -5,9 +5,7 @@ import { RepresentativesBoard } from "./representatives-board";
 export function RepresenativesPage() {
   return (
     <main>
-      <header>
-        <Heading title="Representatives management" />
-      </header>
+      <Heading title="Representatives management" />
       <section>
         <InputForm />
       </section>

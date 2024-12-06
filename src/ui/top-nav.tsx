@@ -12,7 +12,7 @@ const links = [
   },
   {
     name: "Representatives",
-    href: "/representatives-management",
+    href: "/representatives",
   },
   {
     name: "Public-voting",
