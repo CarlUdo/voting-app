@@ -1,6 +1,6 @@
 import { Db } from "@/db";
 import { represenativesService } from "../representatives-management";
-import { issuesService } from "../issues-management";
+import { issuesService } from "../issues";
 import {
   newRepresentativeVoteSchema,
   type NewRepresentativeVote,
