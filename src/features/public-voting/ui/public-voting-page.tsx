@@ -4,11 +4,11 @@ import { PublicVotingSelector, RepresentativesBoard } from ".";
 import { publicVotingService } from "..";
 
 type Props = {
-  searchParams: { voterId?: string };
+  searchParams: Promise<{ voterId?: string }>;
 };
 
 export async function PublicVotingPage({ searchParams }: Props) {
-  const selectedVoterId = searchParams.voterId;
+  const selectedVoterId = (await searchParams).voterId;
 
   const currentVote = selectedVoterId
     ? await publicVotingService.getLatestVoteByPublicVoter(selectedVoterId)

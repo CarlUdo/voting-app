@@ -1,7 +1,8 @@
 import { PublicVotingPage } from "@/features/public-voting";
 
+
 type Props = {
-  searchParams: { voterId?: string };
+  searchParams: Promise<{ voterId?: string }>;
 };
 
 export default function Page({ searchParams }: Props) {
