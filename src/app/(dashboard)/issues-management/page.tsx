@@ -1,5 +1,3 @@
-import { IssuesPage } from "@/features/issues-management";
+import { IssuesPage } from "@/features";
 
-export default function Page() {
-  return <IssuesPage />;
-}
+export default IssuesPage;
