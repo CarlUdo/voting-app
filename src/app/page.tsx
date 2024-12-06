@@ -1,5 +1,3 @@
 import { LoginPage } from "@/ui";
 
-export default function Home() {
-  return <LoginPage />;
-}
+export default LoginPage;
