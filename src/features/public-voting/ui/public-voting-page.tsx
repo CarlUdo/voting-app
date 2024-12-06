@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import { Heading } from "@/ui";
-import { PublicVotingSelector, RepresentativesBoard } from ".";
 import { publicVotingService } from "..";
+import { PublicVotingSelector } from "./public-voting-selector";
+import { RepresentativesBoard } from "./representatives-board";
 
 type Props = {
   searchParams: Promise<{ voterId?: string }>;

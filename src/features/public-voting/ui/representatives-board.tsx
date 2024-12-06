@@ -1,5 +1,6 @@
-import { PublicVoteCard } from ".";
-import { PublicVote, publicVotingService } from "..";
+import { publicVotingService } from "..";
+import { PublicVote } from "../validation";
+import { PublicVoteCard } from "./public-vote-card";
 
 type Props = {
   publicVoterId: string | undefined;

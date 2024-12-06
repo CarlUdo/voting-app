@@ -1,13 +1,9 @@
 import { desc, eq } from "drizzle-orm";
 import { v4 } from "uuid";
 import { Db } from "@/db";
-import {
-  publicVotersTable,
-  publicVotesTable,
-  type NewPublicVote,
-  newPublicVoteSchema,
-} from ".";
 import { represenativesService } from "../representatives";
+import { publicVotersTable, publicVotesTable } from "./schema";
+import { NewPublicVote, newPublicVoteSchema } from "./validation";
 
 export const createService = (db: Db) => {
   return {

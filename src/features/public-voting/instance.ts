@@ -1,4 +1,4 @@
 import { db } from "@/db";
-import { createService } from ".";
+import { createService } from "./services";
 
 export const publicVotingService = createService(db);
