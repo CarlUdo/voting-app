@@ -1,6 +1,10 @@
 import { TopNav } from "@/ui";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: Props) {
   return (
     <main className="p-4">
       <TopNav />
