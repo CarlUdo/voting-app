@@ -17,8 +17,7 @@ export async function PublicVotingPage({ searchParams }: Props) {
 
   return (
     <main>
-
-        <Heading title="Vote for your representative" />
+      <Heading title="Vote for your representative" />
 
       <section className="p-4">
         <PublicVotingSelector publicVoters={publicVoters} />

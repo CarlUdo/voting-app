@@ -1,6 +1,5 @@
 import { PublicVotingPage } from "@/features/public-voting";
 
-
 type Props = {
   searchParams: Promise<{ voterId?: string }>;
 };

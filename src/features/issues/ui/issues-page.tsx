@@ -4,12 +4,12 @@ import { IssuesBoard } from "./issues-board";
 
 export function IssuesPage() {
   return (
-    <main>      
+    <main>
       <Heading title="Issues management" />
       <section>
         <InputForm />
         <IssuesBoard />
-      </section>      
+      </section>
     </main>
   );
 }

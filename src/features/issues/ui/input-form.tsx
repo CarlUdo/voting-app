@@ -96,6 +96,6 @@ export function InputForm() {
           </button>
         </div>
       </fieldset>
-    </form> 
+    </form>
   );
 }
