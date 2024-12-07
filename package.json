@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier . --write",
-    "seed": "tsx src/db/seed.ts"
+    "seed": "tsx src/seed/seed.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
