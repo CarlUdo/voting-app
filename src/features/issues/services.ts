@@ -51,7 +51,7 @@ export const createService = (db: Db) => {
         choices: choices.filter((choice) => choice.issueId === issue.id),
       }));
     },
-    deleteTables: async () => {
+    deleteAll: async () => {
       await db.delete(issuesTable);
       await db.delete(choicesTable);
     },

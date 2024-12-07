@@ -12,6 +12,6 @@ export const createService = (db: Db) => {
         .insert(represenativesTable)
         .values({ id: v4(), ...represenative });
     },
-    deleteTable: async () => await db.delete(represenativesTable),
+    deleteAll: async () => await db.delete(represenativesTable),
   };
 };
