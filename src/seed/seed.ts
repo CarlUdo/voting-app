@@ -11,10 +11,10 @@ const seed = async () => {
 
   try {
     console.log("Clearing existing data...");
-    await represenativesService.deleteTable();
-    await issuesService.deleteTables();
-    await publicVotingService.deleteTables();
-    await representativesVotingService.deleteTable();
+    await represenativesService.deleteAll();
+    await issuesService.deleteAll();
+    await publicVotingService.deleteAll();
+    await representativesVotingService.deleteAll();
     console.log("Done clearing existing data.");
 
     console.log("Adding representatives...");
