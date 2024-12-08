@@ -20,14 +20,3 @@ export const choicesTable = pgTable("choices", {
   issueId: pgUuid().notNull(),
   name: varchar({ length: 255 }).notNull(),
 });
-
-export const issuesRelations = relations(issuesTable, ({ many }) => ({
-  choices: many(choicesTable),
-}));
-
-export const choicesRelations = relations(choicesTable, ({ one }) => ({
-  issue: one(issuesTable, {
-    fields: [choicesTable.issueId],
-    references: [issuesTable.id],
-  }),
-}));
