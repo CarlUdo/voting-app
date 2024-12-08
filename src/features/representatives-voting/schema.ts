@@ -8,5 +8,3 @@ export const representativeVotesTable = pgTable("representative_votes", {
   choiceId: pgUuid().notNull(),
   dateCreated: timestamp().notNull().defaultNow(),
 });
-
-

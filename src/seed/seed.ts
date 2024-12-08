@@ -1,4 +1,9 @@
-import { represenativesService, issuesService, publicVotingService, representativesVotingService } from "@/features";
+import {
+  represenativesService,
+  issuesService,
+  publicVotingService,
+  representativesVotingService,
+} from "@/features";
 import { getPeople, ISSUES_DATA } from "./seed-helpers";
 
 const TOTAL_NUMBER_OF_PEOPLE = 100;
