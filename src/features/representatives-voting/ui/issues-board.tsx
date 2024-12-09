@@ -1,5 +1,5 @@
 import { representativesVotingService } from "../instance";
-import { IssuesVoteCard } from "./issues-vote-card"; // App crashes if I import from "." - why?
+import { IssuesVoteCard } from "./issues-vote-card"; 
 
 type Props = {
   selectedRepId: string | undefined;

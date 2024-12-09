@@ -1,5 +1,5 @@
 import type { IssueType } from "@/libs";
-import { DeactivateButton } from "./deactivate-button"; // Ensure the correct import path to avoid crashes
+import { DeactivateButton } from "./deactivate-button";
 
 export function Issue({ data }: { data: IssueType }) {
   return (
